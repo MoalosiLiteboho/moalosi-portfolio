@@ -9,8 +9,9 @@ export interface MyLogoProps {
 export const MyLogo: React.FC<MyLogoProps> = ({className}) => {
     return (
         <p className={cn("text-xl", className || "")}>
-           <span className="text-primary font-bold">Moalosi</span>
-           <span className="text-black">Liteboho</span>
+            <span className="text-primary font-bold">Moalosi</span>
+            <span className="text-black">Liteboho</span>
+            <span className="text-1xl text-primary">.</span>
         </p>
     );
 }
