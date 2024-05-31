@@ -6,12 +6,17 @@ import {NextUIProvider} from "@nextui-org/react";
 import {NavigationBar} from "./components/navigation/navigation-bar.tsx";
 import {HomePage} from "./pages/home.tsx";
 import {Footer} from "./components/footer/footer.tsx";
+import {ErrorPage} from "./pages/error.tsx";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <HomePage />
     },
+    {
+        path: '/*',
+        element: <ErrorPage />,
+    }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
