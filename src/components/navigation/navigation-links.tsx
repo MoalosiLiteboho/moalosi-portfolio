@@ -20,9 +20,9 @@ export type SocialMediaLinksType = {
 
 export const SocialMediaLinks = (): SocialMediaLinksType[] => {
     return [
-        {icon: <IoLogoLinkedin />, route: "https://www.linkedin.com/in/liteboho-moalosi-64151626a/", color: "#0A66C2"},
+        {icon: <IoLogoLinkedin />, route: "https://www.linkedin.com/in/liteboho-moalosi-64151626a/", color: "text-[#0A66C2]"},
         {icon: <IoLogoGithub/>, route: "https://github.com/MoalosiLiteboho"},
-        {icon: <FaDiscord/>, route: "", color: "#5865F2"},
+        {icon: <FaDiscord/>, route: "", color: "text-[#5865F2]"},
         {icon: <RiTwitterXFill />, route: ""}
     ];
 }

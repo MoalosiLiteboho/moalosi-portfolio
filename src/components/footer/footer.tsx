@@ -23,7 +23,7 @@ export const Footer = () => {
                             href={socialLink.route}
                             radius="full"
                             variant="light"
-                            className={cn("h-8", socialLink.color ? `text-[${socialLink.color}]` : "")}>
+                            className={cn("h-8", socialLink.color || "")}>
                             {socialLink.icon}
                         </Button>
                     ))}
