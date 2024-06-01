@@ -9,7 +9,7 @@ import {
     NavbarMenuItem,
     NavbarMenuToggle
 } from "@nextui-org/react";
-import {NavigationLinks} from "./navigation-links.ts";
+import {NavigationLinks} from "./navigation-links.tsx";
 import {MyLogo} from "../logo/my-logo.tsx";
 import {ThemeSwitch} from "../theme/theme-switch.tsx";
 

@@ -1,8 +1,6 @@
-import {Button, Divider} from "@nextui-org/react";
-import {IoLogoGithub, IoLogoLinkedin} from "react-icons/io5";
-import {RiTwitterXFill} from "react-icons/ri";
-import {FaDiscord} from "react-icons/fa6";
+import {Button, cn, Divider, Link} from "@nextui-org/react";
 import {MyLogo} from "../logo/my-logo.tsx";
+import {SocialMediaLinks} from "../navigation/navigation-links.tsx";
 
 export const Footer = () => {
     return (
@@ -16,34 +14,19 @@ export const Footer = () => {
                     <MyLogo className="text-medium" />
                 </div>
                 <div className="flex justify-center items-center gap-x-0">
-                    <Button
-                        isIconOnly
-                        radius="full"
-                        variant="light"
-                        className="h-8 text-[#0A66C2]">
-                        <IoLogoLinkedin />
-                    </Button>
-                    <Button
-                        isIconOnly
-                        radius="full"
-                        variant="light"
-                        className="h-8">
-                        <IoLogoGithub />
-                    </Button>
-                    <Button
-                        isIconOnly
-                        radius="full"
-                        variant="light"
-                        className="h-8 text-[#5865F2]">
-                        <FaDiscord />
-                    </Button>
-                    <Button
-                        isIconOnly
-                        radius="full"
-                        variant="light"
-                        className="h-8">
-                        <RiTwitterXFill />
-                    </Button>
+                    {SocialMediaLinks().map((socialLink, index) => (
+                        <Button
+                            key={index}
+                            as={Link}
+                            isIconOnly
+                            isExternal
+                            href={socialLink.route}
+                            radius="full"
+                            variant="light"
+                            className={cn("h-8", socialLink.color ? `text-[${socialLink.color}]` : "")}>
+                            {socialLink.icon}
+                        </Button>
+                    ))}
                 </div>
             </div>
         </footer>

@@ -1,8 +1,6 @@
-import {Button} from "@nextui-org/react";
-import {RiTwitterXFill} from "react-icons/ri";
-import {IoLogoGithub, IoLogoLinkedin} from "react-icons/io5";
-import {FaDiscord} from "react-icons/fa6";
+import {Button, cn, Link} from "@nextui-org/react";
 import {FlipWords} from "../components/animation/flip-words.tsx";
+import {SocialMediaLinks} from "../components/navigation/navigation-links.tsx";
 
 export const HomePage = () => {
     const words = ["Software Engineer", "Backend Engineer", "Frontend Engineer", "DevOps Engineer"];
@@ -29,34 +27,19 @@ export const HomePage = () => {
                         Download CV
                     </Button>
                     <div className="flex justify-center items-center mt-5 gap-x-0">
-                        <Button
-                            isIconOnly
-                            radius="full"
-                            variant="light"
-                            className="h-8 text-[#0A66C2]">
-                            <IoLogoLinkedin />
-                        </Button>
-                        <Button
-                            isIconOnly
-                            radius="full"
-                            variant="light"
-                            className="h-8">
-                            <IoLogoGithub />
-                        </Button>
-                        <Button
-                            isIconOnly
-                            radius="full"
-                            variant="light"
-                            className="h-8 text-[#5865F2]">
-                            <FaDiscord />
-                        </Button>
-                        <Button
-                            isIconOnly
-                            radius="full"
-                            variant="light"
-                            className="h-8">
-                            <RiTwitterXFill />
-                        </Button>
+                        {SocialMediaLinks().map((socialLink, index) => (
+                            <Button
+                                key={index}
+                                as={Link}
+                                isIconOnly
+                                isExternal
+                                href={socialLink.route}
+                                radius="full"
+                                variant="light"
+                                className={cn("h-8", socialLink.color ? `text-[${socialLink.color}]` : "")}>
+                                {socialLink.icon}
+                            </Button>
+                        ))}
                     </div>
                 </div>
             </div>
