@@ -9,15 +9,15 @@ export default function HomePage() {
         <>
             <main className="h-screen w-full px-[1em] pt-[3em]">
                 <div className="flex flex-col items-center">
-                    <div>
+                    <div className="w-11/12">
                         <h3 className="text-xl text-center">Hello, It's me</h3>
                         <h2 className="text-2xl text-center">Liteboho James Moalosi</h2>
-                        <h3 className="text-xl flex gap-x-2 items-center">
+                        <h3 className="text-xl flex gap-x-2 items-center justify-center">
                             <span>And {"I'm"} a</span>
                             <FlipWords words={words} className="text-primary"/>
                         </h3>
-                        <p>
-
+                        <p className="text-center">
+                            I love building things and assisting people with my heat. Very active on LinkedIn and Twitter.
                         </p>
                     </div>
                     <div className="flex flex-col gap-x-3 items-center mt-5">
