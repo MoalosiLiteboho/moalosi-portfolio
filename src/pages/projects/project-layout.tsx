@@ -9,15 +9,17 @@ export type ProjectLayoutProps = {
 
 export default function ProjectLayoutPage({ loading, projects }: ProjectLayoutProps) {
     return (
-        <>
+        <div className="w-full h-fit flex flex-col gap-y-3 p-5">
             {loading ? <Loading size="lg" /> : projects.length <= 0 ? <ItemsNotFound /> :
                 projects.map((project: Project, index) => (
-                    <ProjectCard
-                        key={index}
-                        {...project}
-                    />
+                    <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+                        <ProjectCard
+                            key={index}
+                            {...project}
+                        />
+                    </div>
                 ))
             }
-        </>
+        </div>
     );
 }

@@ -6,6 +6,7 @@ import Footer from "@/components/ui/footer.tsx";
 import ErrorPage from "@/pages/error.tsx";
 import HomePage from "@/pages/home.tsx";
 import ProjectPage from "@/pages/projects/projects.tsx";
+import AboutMePage from "@/pages/about-me.tsx";
 
 export default function App() {
     const navigate = useNavigate();
@@ -27,6 +28,7 @@ export default function App() {
                     <Route path="/" element={<RootLayout />}>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/projects" element={<ProjectPage />} />
+                        <Route path="/about-me" element={<AboutMePage />} />
                         <Route path="/*" element={<ErrorPage />} />
                     </Route>
                 </Routes>

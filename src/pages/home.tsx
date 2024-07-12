@@ -1,10 +1,17 @@
-import {Button, cn, Image, Link} from "@nextui-org/react";
+import {Button, Card, CardBody, CardHeader, cn, Image, Link} from "@nextui-org/react";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import myProfileImage from "@/assets/images/me2.jpeg"
 
 export default function HomePage() {
     const words = ["Software Engineer.", "Backend Engineer.", "Frontend Engineer.", "DevOps Engineer."];
+
+    const cardContents = [
+        {
+            "tittle": "GitHub Repository",
+            "count": 78
+        }
+    ];
 
     return (
         <>
@@ -57,7 +64,24 @@ export default function HomePage() {
                     </div>
                 </div>
             </main>
+            <section className="w-full px-5 py-10">
+                {cardContents.map((item, index) => (
+                    <Card key={index}>
+                        <CardHeader className="w-full">
+                            <h1 className="text-center">{item.tittle}</h1>
+                        </CardHeader>
+                        <CardBody>
+                            {item.count}
+                        </CardBody>
+                    </Card>
+                ))}
+            </section>
             <section>
+                <h1>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </h1>
             </section>
         </>
     );

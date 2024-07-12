@@ -6,7 +6,7 @@ import {RiTwitterXFill} from "react-icons/ri";
 export const NavigationLinks = () => {
     return [
         {name: "Home", route: "/"},
-        {name: "About", route: "/about"},
+        {name: "About Me", route: "/about-me"},
         {name: "Contacts", route: "/contacts"},
         {name: "Projects", route: "/projects"},
     ];
