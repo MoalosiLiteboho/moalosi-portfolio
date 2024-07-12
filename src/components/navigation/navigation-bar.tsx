@@ -9,37 +9,46 @@ import {
     NavbarMenuItem,
     NavbarMenuToggle
 } from "@nextui-org/react";
-import {NavigationLinks} from "./navigation-links.tsx";
-import {MyLogo} from "../logo/my-logo.tsx";
-import {ThemeSwitch} from "../theme/theme-switch.tsx";
+import {useLocation} from "react-router-dom";
+import {NavigationLinks} from "@/components/navigation/navigation-links.tsx";
+import ThemeSwitch from "@/components/theme/theme-switch.tsx";
+import Logo from "@/components/ui/logo.tsx";
 
-export const NavigationBar = () => {
+export default function NavigationBar() {
     const navigationMenuLinks = NavigationLinks();
+    const location = useLocation();
 
     return (
         <NextUINavbar
             isBordered
-            shouldHideOnScroll
             maxWidth="xl"
-            className="h-15">
+            className="h-14">
             <NavbarContent justify="start">
-                <NavbarBrand as="li" className="gap-3 max-w-fit">
+                <NavbarMenuToggle className="lg:hidden" />
+                <NavbarBrand className="gap-3 max-w-fit">
                     <Link className="flex justify-start items-center gap-1" href={navigationMenuLinks.shift()?.route}>
-                        <MyLogo />
+                        <Logo />
                     </Link>
                 </NavbarBrand>
             </NavbarContent>
-            <NavbarContent className="hidden lg:flex" justify="end">
+
+            <NavbarContent className="hidden lg:flex" justify="center">
                 {navigationMenuLinks.map((navigationMenuLink) => (
-                    <NavbarItem key={navigationMenuLink.name}>
+                    <NavbarItem
+                        key={navigationMenuLink.name}
+                        isActive={navigationMenuLink.route === location.pathname}
+                    >
                         <Link
-                            color="foreground"
+                            color={navigationMenuLink.route === location.pathname ? "primary" : "foreground"}
                             href={navigationMenuLink.route}
                         >
                             {navigationMenuLink.name}
                         </Link>
                     </NavbarItem>
                 ))}
+            </NavbarContent>
+
+            <NavbarContent justify="end">
                 <ThemeSwitch />
                 <NavbarItem>
                     <Button
@@ -54,33 +63,21 @@ export const NavigationBar = () => {
                 </NavbarItem>
             </NavbarContent>
 
-            <NavbarContent className="lg:hidden" justify="end">
-                <ThemeSwitch />
-                <NavbarMenuToggle />
-            </NavbarContent>
-
             <NavbarMenu>
                 <div className="mx-4 mt-2 flex flex-col gap-1">
                     {navigationMenuLinks.map((navigationMenuLink, index) => (
-                        <NavbarMenuItem key={`${navigationMenuLink}-${index}`}>
+                        <NavbarMenuItem
+                            key={`${navigationMenuLink}-${index}`}
+                            isActive={navigationMenuLink.route === location.pathname}
+                        >
                             <Link
-                                color="foreground"
+                                color={navigationMenuLink.route === location.pathname ? "primary" : "foreground"}
                                 href={navigationMenuLink.route}
-                                size="lg"
                             >
                                 {navigationMenuLink.name}
                             </Link>
                         </NavbarMenuItem>
                     ))}
-                    <NavbarMenuItem>
-                        <Link
-                            color="foreground"
-                            href=""
-                            size="lg"
-                        >
-                            Hire Me
-                        </Link>
-                    </NavbarMenuItem>
                 </div>
             </NavbarMenu>
         </NextUINavbar>

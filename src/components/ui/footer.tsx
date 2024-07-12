@@ -1,17 +1,17 @@
 import {Button, cn, Divider, Link} from "@nextui-org/react";
-import {MyLogo} from "../logo/my-logo.tsx";
-import {SocialMediaLinks} from "../navigation/navigation-links.tsx";
+import Logo from "@/components/ui/logo.tsx";
+import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 
-export const Footer = () => {
+export default function Footer() {
     return (
         <footer>
             <div className="px-4 my-4">
                 <Divider/>
             </div>
             <div className="px-4 mb-5 flex justify-between items-center">
-                <div className="flex">
+                <div className="flex items-center">
                     <p>&copy; {new Date().getFullYear()}.</p>
-                    <MyLogo className="text-medium" />
+                    <Logo className="text-lg" />
                 </div>
                 <div className="flex justify-center items-center gap-x-0">
                     {SocialMediaLinks().map((socialLink, index) => (

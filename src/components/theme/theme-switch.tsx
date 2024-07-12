@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {SwitchProps, useSwitch, VisuallyHidden} from "@nextui-org/react";
 import {useTheme} from "next-themes";
 import clsx from "clsx";
@@ -10,14 +10,10 @@ export interface ThemeSwitchProps {
     classNames?: SwitchProps["classNames"];
 }
 
-export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({className, classNames,}) => {
+export default function ThemeSwitch({className, classNames,}: ThemeSwitchProps) {
     const [isMounted, setIsMounted] = useState(false);
-
     const { theme, setTheme } = useTheme();
-
-    const onChange = () => {
-        theme === "light" ? setTheme("dark") : setTheme("light");
-    };
+    const onChange = () => theme === "light" ? setTheme("dark") : setTheme("light");
 
     const {
         Component,

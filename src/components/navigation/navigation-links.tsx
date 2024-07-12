@@ -7,9 +7,9 @@ export const NavigationLinks = () => {
     return [
         {name: "Home", route: "/"},
         {name: "About", route: "/about"},
-        {name: "Contacts", route: "/about"},
-        {name: "Projects", route: "/about"},
-    ]
+        {name: "Contacts", route: "/contacts"},
+        {name: "Projects", route: "/projects"},
+    ];
 }
 
 export type SocialMediaLinksType = {

@@ -1,30 +1,13 @@
-import './index.css'
+import './style/index.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {NextUIProvider} from "@nextui-org/react";
-import {NavigationBar} from "./components/navigation/navigation-bar.tsx";
-import {HomePage} from "./pages/home.tsx";
-import {Footer} from "./components/footer/footer.tsx";
-import {ErrorPage} from "./pages/error.tsx";
-
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <HomePage />
-    },
-    {
-        path: '/*',
-        element: <ErrorPage />,
-    }
-]);
+import {BrowserRouter} from "react-router-dom";
+import App from "./app.tsx";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <NextUIProvider>
-            <NavigationBar />
-            <RouterProvider router={router} />
-            <Footer />
-        </NextUIProvider>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </React.StrictMode>,
 )
