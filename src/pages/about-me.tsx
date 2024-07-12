@@ -1,8 +1,12 @@
 import {ReactNode} from "react";
 import {Chip} from "@nextui-org/react";
-import {GrJava} from "react-icons/gr";
+import {GrJava, GrSecure} from "react-icons/gr";
 import {SiSpring} from "react-icons/si";
-import {FaCode, FaCodeBranch} from "react-icons/fa6";
+import {FaCode, FaCodeBranch, FaLinux, FaPython, FaReact} from "react-icons/fa6";
+import {TbBrandCSharp, TbBucket} from "react-icons/tb";
+import {CgCPlusPlus} from "react-icons/cg";
+import {BiLogoJavascript, BiLogoPostgresql, BiLogoTypescript} from "react-icons/bi";
+import {VscTerminalPowershell} from "react-icons/vsc";
 
 export default function AboutMePage() {
     return (
@@ -72,10 +76,75 @@ const getMySkills = (): Skill[] => {
         },
         {
             color: "success",
+            tittle: "C-Sharp",
+            level: "93%",
+            icon: <TbBrandCSharp className="mr-1" />
+        },
+        {
+            color: "success",
             tittle: "Functional Programing",
             level: "93%",
             icon: <FaCode className="mr-1" />
         },
-
+        {
+            color: "success",
+            tittle: "C-Plus-Plus",
+            level: "93%",
+            icon: <CgCPlusPlus className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "Python",
+            level: "93%",
+            icon: <FaPython className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "React",
+            level: "93%",
+            icon: <FaReact className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "Typescript",
+            level: "93%",
+            icon: <BiLogoTypescript className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "Javascript",
+            level: "93%",
+            icon: <BiLogoJavascript className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "Linux",
+            level: "93%",
+            icon: <FaLinux className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "Shell Scripting",
+            level: "93%",
+            icon: <VscTerminalPowershell className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "Cybersecurity",
+            level: "93%",
+            icon: <GrSecure className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "S3 Bucket",
+            level: "93%",
+            icon: <TbBucket className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "Postgresql",
+            level: "93%",
+            icon: <BiLogoPostgresql className="mr-1" />
+        },
     ]
 }

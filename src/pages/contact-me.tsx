@@ -13,27 +13,27 @@ export default function ContactMePage() {
                         <Link
                             className="flex items-center gap-x-2 text-foreground"
                         >
-                            <SiMinutemailer />
+                            <SiMinutemailer className="text-success" />
                             <span>litebohojamesmoalosi@gmail.com</span>
                         </Link>
                         <Link
                             className="flex items-center gap-x-2 text-foreground"
                         >
-                            <SiMinutemailer />
+                            <SiMinutemailer className="text-success" />
                             <span>liteboho.moalosi@bothouniversity.com</span>
                         </Link>
                         <div className="flex items-center gap-x-2">
-                            <PiPhoneCall />
+                            <PiPhoneCall className="text-primary" />
                             <span>+266 5981 2856</span>
                         </div>
                         <div className="flex items-center gap-x-2 text-foreground">
-                            <FaWhatsapp />
+                            <FaWhatsapp className="text-[#25D366]" />
                             <span>+266 5981 2856</span>
                         </div>
                         <Link
                             className="flex items-center gap-x-2 text-foreground"
                         >
-                            <FaLinkedin />
+                            <FaLinkedin className="text-[#0077B5]" />
                             <span>Liteboho (James) Moalosi</span>
                         </Link>
                         <Link
