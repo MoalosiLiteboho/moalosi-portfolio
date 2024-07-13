@@ -60,7 +60,15 @@ export default function HomePage() {
                     </div>
                 </div>
             </main>
+            <section>
+                <h1 className="flex gap-x-1 text-2xl justify-center font-light">
+                    <span>Kind words from</span>
+                    <span className="text-primary">satisfied clients</span>
+                </h1>
+                <div>
 
+                </div>
+            </section>
         </>
     );
 }

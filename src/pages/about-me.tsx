@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import {Accordion, AccordionItem, Avatar, Chip} from "@nextui-org/react";
+import {Accordion, AccordionItem, Avatar, Button, Card, CardBody, Chip, Link} from "@nextui-org/react";
 import {GrJava, GrSecure} from "react-icons/gr";
 import {SiSpring} from "react-icons/si";
 import {FaCode, FaCodeBranch, FaLinux, FaPython, FaReact} from "react-icons/fa6";
@@ -22,12 +22,10 @@ export default function AboutMePage() {
                     </p>
                 </div>
             </section>
-            <section className="flex justify-center">
-                <div className="px-2 w-full md:w-3/5 lg:w-2/5 flex flex-col gap-y-4">
+            <section className="w-full h-fit flex py-6 flex-col gap-y-5 justify-center md:flex-row">
+                <div className="px-2 w-full flex flex-col gap-y-4">
                     <h1 className="text-center text-2xl font-light">Education</h1>
-                    <Accordion
-                        variant="splitted"
-                    >
+                    <Accordion variant="splitted">
                         {getEducation().map((item, index) => (
                             <AccordionItem
                                 isCompact
@@ -49,9 +47,7 @@ export default function AboutMePage() {
                         ))}
                     </Accordion>
                 </div>
-            </section>
-            <section className="p-5 flex justify-center">
-                <div className="w-full md:w-4/5 flex flex-col gap-5">
+                <div className="w-full flex flex-col gap-5">
                     <h1 className="text-center text-2xl font-light">My Skills</h1>
                     <div className="p-1">
                         {getMySkills().map((skill, index) => (
@@ -66,6 +62,38 @@ export default function AboutMePage() {
                             </Chip>
                         ))}
                     </div>
+                </div>
+            </section>
+            <section className="flex flex-col justify-center">
+                <h1 className="text-center text-2xl font-light">Experience</h1>
+                <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-3 gap-x-3 justify-between">
+                    {getExperience().map((item, index) => (
+                        <Card key={index}>
+                            <CardBody className="" >
+                               <div className="w-full flex flex-col gap-y-2">
+                                   <div className="flex justify-between gap-y-1">
+                                       <h4 className="text-start">{item.tittle}</h4>
+                                       <p className="">{item.duration}</p>
+                                   </div>
+                                   <div className="flex justify-between gap-x-1">
+                                       <p className="text-sm text-gray-500">{item.description}</p>
+                                       {item.url &&
+                                           <Button
+                                               isIconOnly
+                                               as={Link}
+                                               isExternal
+                                               showAnchorIcon
+                                               href={item.url}
+                                               variant="shadow"
+                                               size="sm"
+                                               color="primary"
+                                           />
+                                       }
+                                   </div>
+                               </div>
+                            </CardBody>
+                        </Card>
+                    ))}
                 </div>
             </section>
         </>
@@ -199,4 +227,28 @@ const getMySkills = (): Skill[] => {
             icon: <BiLogoPostgresql className="mr-1" />
         },
     ]
+}
+
+type Experience = {
+    tittle: string;
+    description: string;
+    image?: string;
+    url?: string;
+    duration: string;
+}
+
+const getExperience = (): Experience[] => {
+    return [
+        {
+            tittle: "ISOC Lesotho",
+            description: "Web Developer & Designer, DevOps Engineer",
+            url: "https://isoc.org.ls/",
+            duration: "June, 2024"
+        },
+        {
+            tittle: "Tsepo Ea Rona Finance",
+            description: "Internee: Web Developer & Designer, DevOps Engineer, Backend Engineer",
+            duration: "Jul-Nov, 2023"
+        }
+    ];
 }
