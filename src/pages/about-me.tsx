@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import {Chip} from "@nextui-org/react";
+import {Accordion, AccordionItem, Avatar, Chip} from "@nextui-org/react";
 import {GrJava, GrSecure} from "react-icons/gr";
 import {SiSpring} from "react-icons/si";
 import {FaCode, FaCodeBranch, FaLinux, FaPython, FaReact} from "react-icons/fa6";
@@ -11,40 +11,92 @@ import {VscTerminalPowershell} from "react-icons/vsc";
 export default function AboutMePage() {
     return (
         <>
-            <section className="px-5 py-6">
-                <h1 className="text-center text-2xl font-light">Who am I?</h1>
-                <p className="text-center font-light mt-6">
-                    Hi there! I'm Moalosi James Liteboho, a student at Botho University Maseru Lesotho enrolled in
-                    Bachelor of Science (Honours) in Computing program concentrating in software engineering and in my
-                    last six month of completing my degree. I'm passionate about software engineering, dev-ops
-                    engineering and cybersecurity.
-                </p>
-            </section>
-            <section className="p-5 flex flex-col gap-5">
-                <h1 className="text-center text-2xl font-light">My Skills</h1>
-                <div className="p-1 border rounded-lg">
-                    {getMySkills().map((skill, index) => (
-                        <Chip
-                            key={index}
-                            variant="flat"
-                            className="m-1"
-                            color={skill.color}
-                            startContent={<div className="ml-1">{skill.level}</div>}
-                            endContent={skill.icon}
-                        >
-                            {skill.tittle}
-                        </Chip>
-                    ))}
+            <section className="px-5 py-6 flex justify-center">
+                <div className="w-full md:w-4/5 lg:w-3/5">
+                    <h1 className="text-center text-2xl font-light">Who am I?</h1>
+                    <p className="text-center font-light mt-6">
+                        Hi there! I'm Moalosi James Liteboho, a student at Botho University Maseru Lesotho enrolled in
+                        Bachelor of Science (Honours) in Computing program concentrating in software engineering and in
+                        my last six month of completing my degree. I'm passionate about software engineering, dev-ops
+                        engineering and cybersecurity.
+                    </p>
                 </div>
             </section>
-            <section>
-                <h1 className="text-center text-2xl font-light">My Certificates</h1>
-                <div>
+            <section className="flex justify-center">
+                <div className="px-2 w-full md:w-3/5 lg:w-2/5 flex flex-col gap-y-4">
+                    <h1 className="text-center text-2xl font-light">Education</h1>
+                    <Accordion
+                        variant="splitted"
+                    >
+                        {getEducation().map((item, index) => (
+                            <AccordionItem
+                                isCompact
+                                key={index}
+                                aria-label={item.name}
+                                title={item.name}
+                                subtitle={item.description}
+                                startContent={
+                                    <Avatar
+                                        isBordered
+                                        size="md"
+                                        name={item.name}
+                                        src={item.image}
+                                    />
+                                }
+                            >
 
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
+            </section>
+            <section className="p-5 flex justify-center">
+                <div className="w-full md:w-4/5 flex flex-col gap-5">
+                    <h1 className="text-center text-2xl font-light">My Skills</h1>
+                    <div className="p-1">
+                        {getMySkills().map((skill, index) => (
+                            <Chip
+                                key={index}
+                                variant="flat"
+                                className="m-1"
+                                color={skill.color}
+                                endContent={skill.icon}
+                            >
+                                {skill.tittle}
+                            </Chip>
+                        ))}
+                    </div>
                 </div>
             </section>
         </>
     );
+}
+
+type Education = {
+    image?: string;
+    name: string;
+    description: string;
+    date: string;
+}
+
+const getEducation = (): Education[] => {
+    return [
+        {
+            name: "Botho University",
+            description: "B.sc(Hons) in Computing",
+            date: "2020-25"
+        },
+        {
+            name: "Holy Cross High School",
+            description: "JC and LJCSE",
+            date: ""
+        },
+        {
+            name: "Seaka L.E.C Primary",
+            description: "Primary Certificate",
+            date: ""
+        },
+    ];
 }
 
 type Skill = {
@@ -60,13 +112,13 @@ const getMySkills = (): Skill[] => {
             color: "success",
             tittle: "Spring boot",
             level: "70%",
-            icon: <SiSpring className="mr-1" />
+            icon: <SiSpring className="mr-1"/>
         },
         {
             color: "success",
             tittle: "Java",
             level: "90%",
-            icon: <GrJava className="mr-1" />
+            icon: <GrJava className="mr-1"/>
         },
         {
             color: "primary",
