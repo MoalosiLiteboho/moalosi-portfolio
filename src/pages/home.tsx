@@ -137,6 +137,7 @@ export default function HomePage() {
                     </Marquee>
                 </div>
             </section>
+
         </>
     );
 }
