@@ -51,24 +51,35 @@ export default function HomePage() {
 
     const favoriteProjects = [
         {
-            name: "Project",
-            contributors: "Moalosi Liteboho"
-        },{
-            name: "Project",
-            contributors: "Moalosi Liteboho"
-        },{
-            name: "Project",
-            contributors: "Moalosi Liteboho"
-        },{
-            name: "Project",
-            contributors: "Moalosi Liteboho"
+            name: "ISOC Lesotho Chapter",
+            contributors: "Moalosi Liteboho",
+            image: "https://isoc.org.ls/wp-content/uploads/2020/08/background_isoc-1.png",
+            webUrl: "https://isoc.org.ls/"
+        },
+        {
+            name: "Login & SignUp Java-Swings",
+            contributors: "Moalosi Liteboho",
+            image: "https://user-images.githubusercontent.com/112495633/227000232-a0b1bb49-75d8-4886-bdcd-4dadc1dd7fe1.png",
+            githubUrl: "https://github.com/MoalosiLiteboho/desktop-application-logIn-and-registration-interface"
+        },
+        {
+            name: "Student grading Shell",
+            contributors: "Moalosi Liteboho",
+            image: "https://source.unsplash.com/4Mw7nkQDByk",
+            githubUrl: "https://github.com/MoalosiLiteboho/student-grading-using-bash"
+        },
+        {
+            name: "University System",
+            contributors: "Moalosi Liteboho",
+            image: "https://nextui.org/images/card-example-6.jpeg",
+            githubUrl: "https://github.com/MoalosiLiteboho/moalosi-university-web-application"
         },
     ];
 
     return (
         <>
             <main className="h-screen w-full flex justify-center md:h-fit lg:h-screen items-center md:px-5">
-                <div className="h-fit w-full mt-5 md:mt-10 flex flex-col items-center md:justify-center gap-y-10 md:flex-row-reverse md:gap-x-2 md:items-start">
+                <div className="h-fit w-full mt-5 md:mt-10 lg:-mt-10 flex flex-col items-center md:justify-center gap-y-10 md:flex-row-reverse md:gap-x-2 md:items-start">
                     <div className="w-[12em] h-[12em] md:w-[19em] md:h-[15em] lg:w-[16em] lg:h-[16em]">
                         <Image
                             removeWrapper
@@ -135,7 +146,7 @@ export default function HomePage() {
                                 removeWrapper
                                 alt="Card example background"
                                 className="z-0 w-full h-full scale-100 object-cover"
-                                src="https://nextui.org/images/card-example-6.jpeg"
+                                src={project.image}
                             />
                             <CardFooter className="absolute bg-white/70 dark:bg-black/50 bottom-0 border-t-1 border-zinc-100/50 z-10">
                                 <div className="w-full flex flex-col">
@@ -146,20 +157,32 @@ export default function HomePage() {
                                     </div>
                                     <div className="w-full flex justify-between items-center">
                                         <div className="flex gap-x-1">
-                                            <Chip
-                                                startContent={<PiGlobeThin/>}
-                                                variant="bordered"
-                                                color="default"
-                                            >
-                                                Website
-                                            </Chip>
-                                            <Chip
-                                                startContent={<IoLogoGithub/>}
-                                                variant="bordered"
-                                                color="default"
-                                            >
-                                                Source
-                                            </Chip>
+                                            {project.webUrl && (
+                                                <Chip
+                                                    as={Link}
+                                                    isExternal
+                                                    href={project.webUrl}
+                                                    startContent={<PiGlobeThin/>}
+                                                    variant="bordered"
+                                                    className="text-foreground"
+                                                    color="primary"
+                                                >
+                                                    Website
+                                                </Chip>
+                                            )}
+                                            {project.githubUrl && (
+                                                <Chip
+                                                    as={Link}
+                                                    isExternal
+                                                    href={project.githubUrl}
+                                                    startContent={<IoLogoGithub/>}
+                                                    variant="bordered"
+                                                    className="text-foreground"
+                                                    color="primary"
+                                                >
+                                                    Source
+                                                </Chip>
+                                            )}
                                         </div>
                                         <Button
                                             color="primary"
@@ -176,6 +199,8 @@ export default function HomePage() {
                     ))}
                 </div>
                 <Button
+                    as={Link}
+                    href="/projects"
                     className="mt-6"
                     variant="bordered"
                     color="primary"
