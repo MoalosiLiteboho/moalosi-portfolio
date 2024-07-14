@@ -16,7 +16,7 @@ export type ProjectCardProps = Project & {
 export default function ProjectCard({name, image, icon}: ProjectCardProps) {
     return (
         <>
-            <Card isFooterBlurred className="w-full h-[250px] col-span-12 sm:col-span-7">
+            <Card isFooterBlurred className="w-full h-[250px]">
                 <Image
                     removeWrapper
                     alt={`${name}'s background image`}

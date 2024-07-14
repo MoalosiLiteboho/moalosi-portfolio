@@ -7,7 +7,6 @@ export const NavigationLinks = () => {
     return [
         {name: "Home", route: "/"},
         {name: "About Me", route: "/about-me"},
-        {name: "Contact Me", route: "/contact-me"},
         {name: "Projects", route: "/projects"},
     ];
 }

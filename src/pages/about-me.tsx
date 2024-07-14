@@ -99,6 +99,14 @@ export default function AboutMePage() {
                     ))}
                 </div>
             </section>
+            <section className="flex flex-col items-center p-4">
+                <h1 className="text-center text-2xl font-light">Get in Touch</h1>
+                <p className="text-center w-full md:w-3/4 lg:w-3/5">
+                    Want to chat? Just shut me a dm <span>on any of the bellow social media links or emails with a
+                    direct message or question</span> and i will respond whenever i can.
+                </p>
+
+            </section>
         </>
     );
 }
