@@ -1,8 +1,8 @@
-import {Button, Card, CardHeader, cn, Image, Link, User} from "@nextui-org/react";
+import {Button, Card, CardBody, CardHeader, cn, Image, Link, User} from "@nextui-org/react";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import myProfileImage from "@/assets/images/me2.jpeg"
-import Marquee from "@/components/ui/marquee.tsx";
+import Marquee from "react-fast-marquee";
 
 export default function HomePage() {
     const words = ["Software Engineer.", "Backend Engineer.", "Frontend Engineer.", "DevOps Engineer."];
@@ -101,25 +101,37 @@ export default function HomePage() {
             </main>
             <section>
                 <h1 className="flex gap-x-1 text-2xl justify-center font-light">
-                    <span>Kind words from</span>
-                    <span className="text-primary">satisfied clients</span>
+                    <span>Kind words about</span>
+                    <span className="text-primary">My Effort</span>
                 </h1>
-                <div className="relative mt-6 flex h-fit w-full flex-col items-center justify-center overflow-hidden  bg-background md:shadow-xl">
-                    <Marquee pauseOnHover className="[--duration:20s]">
+                <div className="h-fit w-full">
+                    <Marquee
+                        pauseOnClick
+                        pauseOnHover
+                        direction="right"
+                        className="bg-white py-6"
+                    >
                         {reviews.map((review, index) => (
                             <Card
                                 key={index}
-                                className="w-[20em]"
+                                className="w-[20em] mx-2"
                             >
                                 <CardHeader>
                                     <User
                                         name={review.name}
-                                        description="Product Designer"
+                                        description={review.username}
                                         avatarProps={{
-                                            src: "https://i.pravatar.cc/150?u=a04258114e29026702d"
+                                            src: `${review.img}`
                                         }}
                                     />
                                 </CardHeader>
+                                <CardBody className="-mt-2">
+                                    <blockquote className="text-sm text-slate-600">
+                                        &quot;
+                                        {review.body}
+                                        &quot;
+                                    </blockquote>
+                                </CardBody>
                             </Card>
                         ))}
                     </Marquee>
