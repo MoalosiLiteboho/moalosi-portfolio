@@ -1,11 +1,50 @@
-import {Button, cn, Image, Link} from "@nextui-org/react";
+import {Button, Card, CardHeader, cn, Image, Link, User} from "@nextui-org/react";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import myProfileImage from "@/assets/images/me2.jpeg"
+import Marquee from "@/components/ui/marquee.tsx";
 
 export default function HomePage() {
     const words = ["Software Engineer.", "Backend Engineer.", "Frontend Engineer.", "DevOps Engineer."];
 
+    const reviews = [
+        {
+            name: "Jack",
+            username: "@jack",
+            body: "I've never seen anything like this before. It's amazing. I love it.",
+            img: "https://avatar.vercel.sh/jack",
+        },
+        {
+            name: "Jill",
+            username: "@jill",
+            body: "I don't know what to say. I'm speechless. This is amazing.",
+            img: "https://avatar.vercel.sh/jill",
+        },
+        {
+            name: "John",
+            username: "@john",
+            body: "I'm at a loss for words. This is amazing. I love it.",
+            img: "https://avatar.vercel.sh/john",
+        },
+        {
+            name: "Jane",
+            username: "@jane",
+            body: "I'm at a loss for words. This is amazing. I love it.",
+            img: "https://avatar.vercel.sh/jane",
+        },
+        {
+            name: "Jenny",
+            username: "@jenny",
+            body: "I'm at a loss for words. This is amazing. I love it.",
+            img: "https://avatar.vercel.sh/jenny",
+        },
+        {
+            name: "James",
+            username: "@james",
+            body: "I'm at a loss for words. This is amazing. I love it.",
+            img: "https://avatar.vercel.sh/james",
+        },
+    ];
 
     return (
         <>
@@ -65,8 +104,25 @@ export default function HomePage() {
                     <span>Kind words from</span>
                     <span className="text-primary">satisfied clients</span>
                 </h1>
-                <div>
-
+                <div className="relative mt-6 flex h-fit w-full flex-col items-center justify-center overflow-hidden  bg-background md:shadow-xl">
+                    <Marquee pauseOnHover className="[--duration:20s]">
+                        {reviews.map((review, index) => (
+                            <Card
+                                key={index}
+                                className="w-[20em]"
+                            >
+                                <CardHeader>
+                                    <User
+                                        name={review.name}
+                                        description="Product Designer"
+                                        avatarProps={{
+                                            src: "https://i.pravatar.cc/150?u=a04258114e29026702d"
+                                        }}
+                                    />
+                                </CardHeader>
+                            </Card>
+                        ))}
+                    </Marquee>
                 </div>
             </section>
         </>

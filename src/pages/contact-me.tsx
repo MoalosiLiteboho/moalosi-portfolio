@@ -7,7 +7,11 @@ export default function ContactMePage() {
     return (
         <>
             <section className="p-4">
-                <h1 className="text-center text-2xl font-light">Contact Me</h1>
+                <h1 className="text-center text-2xl font-light">Get in Touch</h1>
+                <p>
+                    Want to chat? Just shut me a dm <span>on any of the bellow social media links or emails with a
+                    direct message or question</span> and i will respond whenever i can.
+                </p>
                 <div className="flex justify-center">
                     <div className="flex flex-col justify-start">
                         <Link

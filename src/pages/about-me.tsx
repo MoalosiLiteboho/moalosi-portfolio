@@ -66,10 +66,13 @@ export default function AboutMePage() {
             </section>
             <section className="flex flex-col justify-center">
                 <h1 className="text-center text-2xl font-light">Experience</h1>
-                <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-3 gap-x-3 justify-between">
+                <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-center gap-y-3 gap-x-3 ">
                     {getExperience().map((item, index) => (
-                        <Card key={index}>
-                            <CardBody className="" >
+                        <Card
+                            key={index}
+                            className="lg:w-1/4"
+                        >
+                            <CardBody>
                                <div className="w-full flex flex-col gap-y-2">
                                    <div className="flex justify-between gap-y-1">
                                        <h4 className="text-start">{item.tittle}</h4>
