@@ -1,8 +1,11 @@
-import {Button, Card, CardBody, CardHeader, cn, Image, Link, User} from "@nextui-org/react";
+import {Button, Card, CardBody, CardFooter, CardHeader, Chip, cn, Image, Link, User} from "@nextui-org/react";
+import Marquee from "react-fast-marquee";
+import {PiGlobeThin, PiUsers} from "react-icons/pi";
+import {IoLogoGithub} from "react-icons/io5";
+import {IoMdArrowForward} from "react-icons/io";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import myProfileImage from "@/assets/images/me2.jpeg"
-import Marquee from "react-fast-marquee";
 
 export default function HomePage() {
     const words = ["Software Engineer.", "Backend Engineer.", "Frontend Engineer.", "DevOps Engineer."];
@@ -43,6 +46,22 @@ export default function HomePage() {
             username: "@james",
             body: "I'm at a loss for words. This is amazing. I love it.",
             img: "https://avatar.vercel.sh/james",
+        },
+    ];
+
+    const favoriteProjects = [
+        {
+            name: "Project",
+            contributors: "Moalosi Liteboho"
+        },{
+            name: "Project",
+            contributors: "Moalosi Liteboho"
+        },{
+            name: "Project",
+            contributors: "Moalosi Liteboho"
+        },{
+            name: "Project",
+            contributors: "Moalosi Liteboho"
         },
     ];
 
@@ -99,6 +118,72 @@ export default function HomePage() {
                     </div>
                 </div>
             </main>
+            <section className="my-5 px-5 flex flex-col justify-center items-center">
+                <h3 className="text-2xl text-center font-light">Check out my latest work</h3>
+                <p className="w-full text-center md:w-3/4 lg:w-3/5">
+                    I've worked on a variety of projects, from simple websites to complex web applications, backend apis
+                    , desktop apps and more. Here are a few of my favorites.
+                </p>
+                <div className="w-full mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-5 gap-x-4">
+                    {favoriteProjects.map((project, index) => (
+                        <Card
+                            key={index}
+                            isFooterBlurred
+                            className="w-full h-[20em]"
+                        >
+                            <Image
+                                removeWrapper
+                                alt="Card example background"
+                                className="z-0 w-full h-full scale-100 object-cover"
+                                src="https://nextui.org/images/card-example-6.jpeg"
+                            />
+                            <CardFooter className="absolute bg-white/70 dark:bg-black/50 bottom-0 border-t-1 border-zinc-100/50 z-10">
+                                <div className="w-full flex flex-col">
+                                    <h6 className="text-black dark:text-white text-md font-semibold">{project.name}</h6>
+                                    <div className="flex gap-x-1 items-center text-sm">
+                                        <PiUsers />
+                                        <span>{project.contributors}</span>
+                                    </div>
+                                    <div className="w-full flex justify-between items-center">
+                                        <div className="flex gap-x-1">
+                                            <Chip
+                                                startContent={<PiGlobeThin/>}
+                                                variant="bordered"
+                                                color="default"
+                                            >
+                                                Website
+                                            </Chip>
+                                            <Chip
+                                                startContent={<IoLogoGithub/>}
+                                                variant="bordered"
+                                                color="default"
+                                            >
+                                                Source
+                                            </Chip>
+                                        </div>
+                                        <Button
+                                            color="primary"
+                                            variant="shadow"
+                                            size="sm"
+                                            className="w-fit"
+                                        >
+                                            More
+                                        </Button>
+                                    </div>
+                                </div>
+                            </CardFooter>
+                        </Card>
+                    ))}
+                </div>
+                <Button
+                    className="mt-6"
+                    variant="bordered"
+                    color="primary"
+                    endContent={<IoMdArrowForward />}
+                >
+                    See More
+                </Button>
+            </section>
             <section>
                 <h1 className="flex gap-x-1 text-2xl justify-center font-light">
                     <span>Kind words about</span>
@@ -109,7 +194,7 @@ export default function HomePage() {
                         pauseOnClick
                         pauseOnHover
                         direction="right"
-                        className="bg-white py-6"
+                        className="py-6"
                     >
                         {reviews.map((review, index) => (
                             <Card
@@ -126,7 +211,7 @@ export default function HomePage() {
                                     />
                                 </CardHeader>
                                 <CardBody className="-mt-2">
-                                    <blockquote className="text-sm text-slate-600">
+                                    <blockquote className="text-sm text-gray-500">
                                         &quot;
                                         {review.body}
                                         &quot;
@@ -137,7 +222,6 @@ export default function HomePage() {
                     </Marquee>
                 </div>
             </section>
-
         </>
     );
 }
