@@ -67,7 +67,7 @@ export default function HomePage() {
 
     return (
         <>
-            <main className="h-screen w-full flex justify-center md:h-fit md:px-5">
+            <main className="h-screen w-full flex justify-center md:h-fit lg:h-screen items-center md:px-5">
                 <div className="h-fit w-full mt-5 md:mt-10 flex flex-col items-center md:justify-center gap-y-10 md:flex-row-reverse md:gap-x-2 md:items-start">
                     <div className="w-[12em] h-[12em] md:w-[19em] md:h-[15em] lg:w-[16em] lg:h-[16em]">
                         <Image
