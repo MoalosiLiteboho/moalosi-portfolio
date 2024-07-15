@@ -13,7 +13,7 @@ export default function AboutMePage() {
         <>
             <section className="px-5 py-6 flex justify-center">
                 <div className="w-full md:w-4/5 lg:w-3/5">
-                    <h1 className="text-center text-2xl font-light">Who am I?</h1>
+                    <h1 className="text-center text-2xl font-light mt-8">Who am I?</h1>
                     <p className="text-center font-light mt-6">
                         Hi there! I'm Moalosi James Liteboho, a student at Botho University Maseru Lesotho enrolled in
                         Bachelor of Science (Honours) in Computing program concentrating in software engineering and in
@@ -42,7 +42,7 @@ export default function AboutMePage() {
                                     />
                                 }
                             >
-
+                                {item.body}
                             </AccordionItem>
                         ))}
                     </Accordion>
@@ -115,7 +115,7 @@ type Education = {
     image?: string;
     name: string;
     description: string;
-    date: string;
+    body: ReactNode;
 }
 
 const getEducation = (): Education[] => {
@@ -123,17 +123,17 @@ const getEducation = (): Education[] => {
         {
             name: "Botho University",
             description: "B.sc(Hons) in Computing",
-            date: "2020-25"
+            body: "2020-25"
         },
         {
             name: "Holy Cross High School",
             description: "JC and LJCSE",
-            date: ""
+            body: ""
         },
         {
             name: "Seaka L.E.C Primary",
             description: "Primary Certificate",
-            date: ""
+            body: ""
         },
     ];
 }

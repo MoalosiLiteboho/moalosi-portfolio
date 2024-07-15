@@ -6,6 +6,7 @@ import {IoMdArrowForward} from "react-icons/io";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import myProfileImage from "@/assets/images/me2.jpeg"
+import myCv from "@/assets/pdf/Moalosi CV.pdf"
 
 export default function HomePage() {
     const words = ["Software Engineer.", "Backend Engineer.", "Frontend Engineer.", "DevOps Engineer."];
@@ -105,9 +106,13 @@ export default function HomePage() {
                         </div>
                         <div className="flex flex-col gap-x-3 items-center mt-5">
                             <Button
+                                as={Link}
+                                href={myCv}
                                 color="primary"
                                 variant="shadow"
-                                className="h-8">
+                                className="h-8"
+                                download="moalosi-liteboho-cv.pdf"
+                            >
                                 Download CV
                             </Button>
                             <div className="flex justify-center items-center mt-5 gap-x-0">

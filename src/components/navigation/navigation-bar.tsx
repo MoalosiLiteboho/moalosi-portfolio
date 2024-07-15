@@ -55,7 +55,7 @@ export default function NavigationBar() {
                         as={Link}
                         className="text-sm font-normal h-8"
                         color="primary"
-                        href="/join-us"
+                        href="mailto:litebohojamesmoalosi@gmail.com"
                         variant="shadow"
                     >
                         Hire Me
