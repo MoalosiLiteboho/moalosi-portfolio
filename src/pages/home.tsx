@@ -1,4 +1,16 @@
-import {Button, Card, CardBody, CardFooter, CardHeader, Chip, cn, Image, Link, User} from "@nextui-org/react";
+import {
+    Button,
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
+    Chip,
+    cn,
+    Image,
+    Link, Modal, ModalBody, ModalContent, ModalHeader,
+    useDisclosure,
+    User
+} from "@nextui-org/react";
 import Marquee from "react-fast-marquee";
 import {PiGlobeThin, PiUsers} from "react-icons/pi";
 import {IoLogoGithub} from "react-icons/io5";
@@ -7,75 +19,78 @@ import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import myProfileImage from "@/assets/images/me2.jpeg"
 import myCv from "@/assets/pdf/Moalosi CV.pdf"
+import {Drawer, DrawerContent, DrawerHeader, DrawerTrigger} from "@/components/ui/drawer.tsx";
+import {ScrollArea} from "@/components/ui/scroll-area.tsx";
+
+const words = ["Software Engineer.", "Backend Engineer.", "Frontend Engineer.", "DevOps Engineer."];
+
+const reviews = [
+    {
+        name: "Jack",
+        username: "@jack",
+        body: "I've never seen anything like this before. It's amazing. I love it.",
+        img: "https://avatar.vercel.sh/jack",
+    },
+    {
+        name: "Jill",
+        username: "@jill",
+        body: "I don't know what to say. I'm speechless. This is amazing.",
+        img: "https://avatar.vercel.sh/jill",
+    },
+    {
+        name: "John",
+        username: "@john",
+        body: "I'm at a loss for words. This is amazing. I love it.",
+        img: "https://avatar.vercel.sh/john",
+    },
+    {
+        name: "Jane",
+        username: "@jane",
+        body: "I'm at a loss for words. This is amazing. I love it.",
+        img: "https://avatar.vercel.sh/jane",
+    },
+    {
+        name: "Jenny",
+        username: "@jenny",
+        body: "I'm at a loss for words. This is amazing. I love it.",
+        img: "https://avatar.vercel.sh/jenny",
+    },
+    {
+        name: "James",
+        username: "@james",
+        body: "I'm at a loss for words. This is amazing. I love it.",
+        img: "https://avatar.vercel.sh/james",
+    },
+];
+
+const favoriteProjects = [
+    {
+        name: "ISOC Lesotho Chapter",
+        contributors: "Moalosi Liteboho",
+        image: "https://isoc.org.ls/wp-content/uploads/2020/08/background_isoc-1.png",
+        webUrl: "https://isoc.org.ls/"
+    },
+    {
+        name: "Login & SignUp Java-Swings",
+        contributors: "Moalosi Liteboho",
+        image: "https://user-images.githubusercontent.com/112495633/227000232-a0b1bb49-75d8-4886-bdcd-4dadc1dd7fe1.png",
+        githubUrl: "https://github.com/MoalosiLiteboho/desktop-application-logIn-and-registration-interface"
+    },
+    {
+        name: "Student grading Shell",
+        contributors: "Moalosi Liteboho",
+        image: "https://source.unsplash.com/4Mw7nkQDByk",
+        githubUrl: "https://github.com/MoalosiLiteboho/student-grading-using-bash"
+    },
+    {
+        name: "University System",
+        contributors: "Moalosi Liteboho",
+        image: "https://nextui.org/images/card-example-6.jpeg",
+        githubUrl: "https://github.com/MoalosiLiteboho/moalosi-university-web-application"
+    },
+];
 
 export default function HomePage() {
-    const words = ["Software Engineer.", "Backend Engineer.", "Frontend Engineer.", "DevOps Engineer."];
-
-    const reviews = [
-        {
-            name: "Jack",
-            username: "@jack",
-            body: "I've never seen anything like this before. It's amazing. I love it.",
-            img: "https://avatar.vercel.sh/jack",
-        },
-        {
-            name: "Jill",
-            username: "@jill",
-            body: "I don't know what to say. I'm speechless. This is amazing.",
-            img: "https://avatar.vercel.sh/jill",
-        },
-        {
-            name: "John",
-            username: "@john",
-            body: "I'm at a loss for words. This is amazing. I love it.",
-            img: "https://avatar.vercel.sh/john",
-        },
-        {
-            name: "Jane",
-            username: "@jane",
-            body: "I'm at a loss for words. This is amazing. I love it.",
-            img: "https://avatar.vercel.sh/jane",
-        },
-        {
-            name: "Jenny",
-            username: "@jenny",
-            body: "I'm at a loss for words. This is amazing. I love it.",
-            img: "https://avatar.vercel.sh/jenny",
-        },
-        {
-            name: "James",
-            username: "@james",
-            body: "I'm at a loss for words. This is amazing. I love it.",
-            img: "https://avatar.vercel.sh/james",
-        },
-    ];
-
-    const favoriteProjects = [
-        {
-            name: "ISOC Lesotho Chapter",
-            contributors: "Moalosi Liteboho",
-            image: "https://isoc.org.ls/wp-content/uploads/2020/08/background_isoc-1.png",
-            webUrl: "https://isoc.org.ls/"
-        },
-        {
-            name: "Login & SignUp Java-Swings",
-            contributors: "Moalosi Liteboho",
-            image: "https://user-images.githubusercontent.com/112495633/227000232-a0b1bb49-75d8-4886-bdcd-4dadc1dd7fe1.png",
-            githubUrl: "https://github.com/MoalosiLiteboho/desktop-application-logIn-and-registration-interface"
-        },
-        {
-            name: "Student grading Shell",
-            contributors: "Moalosi Liteboho",
-            image: "https://source.unsplash.com/4Mw7nkQDByk",
-            githubUrl: "https://github.com/MoalosiLiteboho/student-grading-using-bash"
-        },
-        {
-            name: "University System",
-            contributors: "Moalosi Liteboho",
-            image: "https://nextui.org/images/card-example-6.jpeg",
-            githubUrl: "https://github.com/MoalosiLiteboho/moalosi-university-web-application"
-        },
-    ];
 
     return (
         <>
@@ -142,65 +157,10 @@ export default function HomePage() {
                 </p>
                 <div className="w-full mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-5 gap-x-4">
                     {favoriteProjects.map((project, index) => (
-                        <Card
+                        <ProjectCard
                             key={index}
-                            isFooterBlurred
-                            className="w-full h-[20em]"
-                        >
-                            <Image
-                                removeWrapper
-                                alt="Card example background"
-                                className="z-0 w-full h-full scale-100 object-cover"
-                                src={project.image}
-                            />
-                            <CardFooter className="absolute bg-white/70 dark:bg-black/50 bottom-0 border-t-1 border-zinc-100/50 z-10">
-                                <div className="w-full flex flex-col">
-                                    <h6 className="text-black dark:text-white text-md font-semibold">{project.name}</h6>
-                                    <div className="flex gap-x-1 items-center text-sm">
-                                        <PiUsers />
-                                        <span>{project.contributors}</span>
-                                    </div>
-                                    <div className="w-full flex justify-between items-center">
-                                        <div className="flex gap-x-1">
-                                            {project.webUrl && (
-                                                <Chip
-                                                    as={Link}
-                                                    isExternal
-                                                    href={project.webUrl}
-                                                    startContent={<PiGlobeThin/>}
-                                                    variant="bordered"
-                                                    className="text-foreground"
-                                                    color="primary"
-                                                >
-                                                    Website
-                                                </Chip>
-                                            )}
-                                            {project.githubUrl && (
-                                                <Chip
-                                                    as={Link}
-                                                    isExternal
-                                                    href={project.githubUrl}
-                                                    startContent={<IoLogoGithub/>}
-                                                    variant="bordered"
-                                                    className="text-foreground"
-                                                    color="primary"
-                                                >
-                                                    Source
-                                                </Chip>
-                                            )}
-                                        </div>
-                                        <Button
-                                            color="primary"
-                                            variant="shadow"
-                                            size="sm"
-                                            className="w-fit"
-                                        >
-                                            More
-                                        </Button>
-                                    </div>
-                                </div>
-                            </CardFooter>
-                        </Card>
+                            project={project}
+                        />
                     ))}
                 </div>
                 <Button
@@ -209,7 +169,7 @@ export default function HomePage() {
                     className="mt-6"
                     variant="bordered"
                     color="primary"
-                    endContent={<IoMdArrowForward />}
+                    endContent={<IoMdArrowForward/>}
                 >
                     See More
                 </Button>
@@ -252,6 +212,205 @@ export default function HomePage() {
                     </Marquee>
                 </div>
             </section>
+        </>
+    );
+}
+
+type Project = {
+    name: string;
+    contributors: string;
+    image: string;
+    webUrl?: string;
+    githubUrl?: string;
+}
+
+const ProjectCard = ({project}: {project: Project}) => {
+    const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
+    return (
+        <>
+            <Card
+                isFooterBlurred
+                className="w-full h-[20em]"
+            >
+                <Image
+                    removeWrapper
+                    alt="Card example background"
+                    className="z-0 w-full h-full scale-100 object-cover"
+                    src={project.image}
+                />
+                <CardFooter className="absolute bg-white/70 dark:bg-black/50 bottom-0 border-t-1 border-zinc-100/50 z-10">
+                    <div className="w-full flex flex-col">
+                        <h6 className="text-black dark:text-white text-md font-semibold">{project.name}</h6>
+                        <div className="flex gap-x-1 items-center text-sm">
+                            <PiUsers />
+                            <span>{project.contributors}</span>
+                        </div>
+                        <div className="w-full flex justify-between items-center">
+                            <div className="flex gap-x-1">
+                                {project.webUrl && (
+                                    <Chip
+                                        as={Link}
+                                        isExternal
+                                        href={project.webUrl}
+                                        startContent={<PiGlobeThin/>}
+                                        variant="bordered"
+                                        className="text-foreground"
+                                        color="primary"
+                                    >
+                                        Website
+                                    </Chip>
+                                )}
+                                {project.githubUrl && (
+                                    <Chip
+                                        as={Link}
+                                        isExternal
+                                        href={project.githubUrl}
+                                        startContent={<IoLogoGithub/>}
+                                        variant="bordered"
+                                        className="text-foreground"
+                                        color="primary"
+                                    >
+                                        Source
+                                    </Chip>
+                                )}
+                            </div>
+                            <Button
+                                color="primary"
+                                variant="shadow"
+                                size="sm"
+                                className="w-fit hidden lg:flex"
+                                onPress={onOpen}
+                            >
+                                More
+                            </Button>
+                            <Drawer>
+                                <DrawerTrigger asChild>
+                                    <Button
+                                        color="primary"
+                                        variant="shadow"
+                                        size="sm"
+                                        className="w-fit lg:hidden"
+                                    >
+                                        More
+                                    </Button>
+                                </DrawerTrigger>
+                                <DrawerContent className="py-2 px-4 h-[80vh] md:h-[45vh] focus:outline-none">
+                                    <DrawerHeader>{project.name}</DrawerHeader>
+                                    <ScrollArea className="mx-auto w-full max-wg-sm md:max-wg-md">
+                                        <div>
+                                            <div className="flex gap-x-1 items-center text-md">
+                                                <PiUsers/>
+                                                <span>{project.contributors}</span>
+                                            </div>
+                                            <div className="flex gap-x-1">
+                                                {project.webUrl && (
+                                                    <Chip
+                                                        as={Link}
+                                                        isExternal
+                                                        href={project.webUrl}
+                                                        startContent={<PiGlobeThin/>}
+                                                        variant="bordered"
+                                                        className="text-foreground"
+                                                        color="primary"
+                                                    >
+                                                        Website
+                                                    </Chip>
+                                                )}
+                                                {project.githubUrl && (
+                                                    <Chip
+                                                        as={Link}
+                                                        isExternal
+                                                        href={project.githubUrl}
+                                                        startContent={<IoLogoGithub/>}
+                                                        variant="bordered"
+                                                        className="text-foreground"
+                                                        color="primary"
+                                                    >
+                                                        Source
+                                                    </Chip>
+                                                )}
+                                            </div>
+                                        </div>
+                                        {project.image &&
+                                            <div className="flex justify-center mb-10 w-full h-fit mt-6">
+                                                <Image
+                                                    alt={project.name + 'image'}
+                                                    src={project.image}
+                                                    className=" w-full h-full"
+                                                />
+                                            </div>
+                                        }
+                                        <div className="mt-2">
+                                        </div>
+                                    </ScrollArea>
+                                </DrawerContent>
+                            </Drawer>
+                        </div>
+                    </div>
+                </CardFooter>
+            </Card>
+            <Modal
+                isOpen={isOpen}
+                onOpenChange={onOpenChange}
+                size="2xl"
+                className="hidden lg:flex"
+            >
+                <ModalContent className="hidden p-3 lg:flex">
+                    <>
+                        <ModalHeader>{project.name}</ModalHeader>
+                        <ModalBody className="-mt-4">
+                            <ScrollArea className="mx-auto w-full max-wg-sm md:max-wg-md">
+                                <div>
+                                    <div className="flex gap-x-1 items-center text-md">
+                                        <PiUsers/>
+                                        <span>{project.contributors}</span>
+                                    </div>
+                                    <div className="flex gap-x-1">
+                                        {project.webUrl && (
+                                            <Chip
+                                                as={Link}
+                                                isExternal
+                                                href={project.webUrl}
+                                                startContent={<PiGlobeThin/>}
+                                                variant="bordered"
+                                                className="text-foreground"
+                                                color="primary"
+                                            >
+                                                Website
+                                            </Chip>
+                                        )}
+                                        {project.githubUrl && (
+                                            <Chip
+                                                as={Link}
+                                                isExternal
+                                                href={project.githubUrl}
+                                                startContent={<IoLogoGithub/>}
+                                                variant="bordered"
+                                                className="text-foreground"
+                                                color="primary"
+                                            >
+                                                Source
+                                            </Chip>
+                                        )}
+                                    </div>
+                                </div>
+                                {project.image &&
+                                    <div className="flex justify-center mb-10 w-full h-fit mt-5">
+                                        <Image
+                                            alt={project.name + 'image'}
+                                            src={project.image}
+                                            className=" w-full h-full"
+                                        />
+                                    </div>
+                                }
+                                <div className="mt-2">
+                                </div>
+                            </ScrollArea>
+                        </ModalBody>
+                    </>
+                </ModalContent>
+            </Modal>
         </>
     );
 }
