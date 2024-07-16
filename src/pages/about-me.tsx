@@ -7,21 +7,24 @@ import {TbBrandCSharp, TbBucket} from "react-icons/tb";
 import {CgCPlusPlus} from "react-icons/cg";
 import {BiLogoJavascript, BiLogoPostgresql, BiLogoTypescript} from "react-icons/bi";
 import {VscTerminalPowershell} from "react-icons/vsc";
+import {IoLogoDocker} from "react-icons/io5";
 import cybersecurityCertificate from "@/assets/pdf/liteboho-sanren-cyberserurity-cerificate-finals.pdf"
 import bothoUniversityTranscript from "@/assets/pdf/liteboho-moalosi-botho-university-transcript.pdf"
-import {IoLogoDocker} from "react-icons/io5";
 
 export default function AboutMePage() {
     return (
         <>
             <section className="px-5 py-6 flex justify-center">
                 <div className="w-full md:w-4/5 lg:w-3/5">
-                    <h1 className="text-center text-2xl font-light mt-8">Who am I?</h1>
+                    <h1 className="text-center text-2xl font-light mt-8">Who am Moalosi Liteboho?</h1>
                     <p className="text-center font-light mt-6">
-                        Hi there! I'm Moalosi James Liteboho, a student at Botho University Maseru Lesotho enrolled in
-                        Bachelor of Science (Honours) in Computing program concentrating in software engineering and in
-                        my last six month of completing my degree. I'm passionate about software engineering, dev-ops
-                        engineering and cybersecurity.
+                        In 2020 I was enrolled in Botho University Maseru Lesotho in a program named Bachelor of Science
+                        (Honours) in Computing which was 4.5 years program and I did not know anything about computing
+                        as I thought I wanted to be Doctor as I grown told that that looks nice on me until I chose to
+                        Doctor of Computers. Later I chose to specialize in Software Engineering and now in my last six
+                        month of completing my degree. During my learning, I felt in love with Software Engineering
+                        especially Web Design and Development, and Api Development. And I also become passionate with
+                        DevOps Engineering and Cybersecurity and more.
                     </p>
                 </div>
             </section>
