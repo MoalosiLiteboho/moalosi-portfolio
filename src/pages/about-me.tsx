@@ -20,7 +20,7 @@ export default function AboutMePage() {
                     <p className="text-center font-light mt-6">
                         In 2020 I was enrolled in Botho University Maseru Lesotho in a program named Bachelor of Science
                         (Honours) in Computing which was 4.5 years program and I did not know anything about computing
-                        as I thought I wanted to be Doctor as I grown told that that looks nice on me until I chose to
+                        as I thought I wanted to be Doctor as I grown told that that looks nice on me until I chose to be
                         Doctor of Computers. Later I chose to specialize in Software Engineering and now in my last six
                         month of completing my degree. During my learning, I felt in love with Software Engineering
                         especially Web Design and Development, and Api Development. And I also become passionate with
