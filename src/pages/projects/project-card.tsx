@@ -59,6 +59,7 @@ export default function ProjectCard({name, image, icon}: ProjectCardProps) {
                     </div>
                 </CardFooter>
             </Card>
+
         </>
     );
 }
