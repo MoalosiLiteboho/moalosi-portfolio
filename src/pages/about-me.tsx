@@ -10,6 +10,7 @@ import {VscTerminalPowershell} from "react-icons/vsc";
 import {IoLogoDocker} from "react-icons/io5";
 import cybersecurityCertificate from "@/assets/pdf/liteboho-sanren-cyberserurity-cerificate-finals.pdf"
 import bothoUniversityTranscript from "@/assets/pdf/liteboho-moalosi-botho-university-transcript.pdf"
+import {BsBoxes, BsFiletypePhp} from "react-icons/bs";
 
 export default function AboutMePage() {
     return (
@@ -249,6 +250,16 @@ const getMySkills = (): Skill[] => {
             color: "success",
             tittle: "NodeJs",
             icon: <FaNode className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "Microservice architecture",
+            icon: <BsBoxes className="mr-1" />
+        },
+        {
+            color: "success",
+            tittle: "Php",
+            icon: <BsFiletypePhp className="mr-1" />
         },
 
     ]
