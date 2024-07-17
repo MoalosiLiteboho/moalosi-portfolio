@@ -1,11 +1,15 @@
 import {Project} from "@/pages/projects/project-card.tsx";
+import {Chip} from "@nextui-org/react";
+import {IoLogoReact} from "react-icons/io5";
+import {BiLogoTailwindCss, BiLogoTypescript} from "react-icons/bi";
+import {DiNodejsSmall} from "react-icons/di";
+import {TbBrandFramerMotion} from "react-icons/tb";
 
 export const getAllProjects = (): Project[] => {
     return [
         {
             name: "ISOC Lesotho Chapter",
             status: "completed",
-            description: "",
             image: "https://isoc.org.ls/wp-content/uploads/2020/08/background_isoc-1.png",
             icon: <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -20,4 +24,77 @@ export const getAllProjects = (): Project[] => {
             </svg>
         }
     ]
+}
+
+export const getFavoriteProjects = (): Project[] => {
+    return [
+        {
+            name: "ISOC Lesotho Chapter",
+            contributors: "Moalosi Liteboho",
+            image: "https://isoc.org.ls/wp-content/uploads/2020/08/background_isoc-1.png",
+            webUrl: "https://isoc.org.ls/",
+            body: <>
+                <p>
+                    The Internet Society Lesotho Chapter's website was designed and developed by Moalosi Liteboho, a web
+                    development and design professional. A website serves as an online presence for the Lesotho Chapter
+                    to promote its mission and activities in the country.
+                </p>
+                <div className="mt-4">
+                    <Chip
+                        variant="light"
+                        className="text-blue-500"
+                        endContent={<IoLogoReact />}
+                    >
+                        React
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-600"
+                        endContent={<BiLogoTypescript />}
+                    >
+                        Typescript
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-500"
+                        endContent={<BiLogoTailwindCss />}
+                    >
+                        Tailwind Css
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-[#3c873a]"
+                        endContent={<DiNodejsSmall />}
+                    >
+                        NodeJs
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+                        endContent={<TbBrandFramerMotion className="text-violet-600" />}
+                    >
+                        Framer Motion
+                    </Chip>
+                </div>
+            </>
+        },
+        {
+            name: "Login & SignUp Java-Swings",
+            contributors: "Moalosi Liteboho",
+            image: "https://user-images.githubusercontent.com/112495633/227000232-a0b1bb49-75d8-4886-bdcd-4dadc1dd7fe1.png",
+            githubUrl: "https://github.com/MoalosiLiteboho/desktop-application-logIn-and-registration-interface"
+        },
+        {
+            name: "Student grading Shell",
+            contributors: "Moalosi Liteboho",
+            image: "https://source.unsplash.com/4Mw7nkQDByk",
+            githubUrl: "https://github.com/MoalosiLiteboho/student-grading-using-bash"
+        },
+        {
+            name: "University System",
+            contributors: "Moalosi Liteboho",
+            image: "https://nextui.org/images/card-example-6.jpeg",
+            githubUrl: "https://github.com/MoalosiLiteboho/moalosi-university-web-application"
+        },
+    ];
 }
