@@ -1,13 +1,16 @@
 import {Project} from "@/pages/projects/project-card.tsx";
 import {Chip} from "@nextui-org/react";
-import {IoLogoReact} from "react-icons/io5";
-import {BiLogoTailwindCss, BiLogoTypescript} from "react-icons/bi";
+import {IoLogoDocker, IoLogoReact} from "react-icons/io5";
+import {BiLogoPostgresql, BiLogoTailwindCss, BiLogoTypescript} from "react-icons/bi";
 import {DiNodejsSmall} from "react-icons/di";
-import {TbBrandFramerMotion} from "react-icons/tb";
-import {GrJava} from "react-icons/gr";
-import signInSignupJavaSwings from "@/assets/images/signin-signup-java-swings.png"
+import {TbBrandFramerMotion, TbBucket} from "react-icons/tb";
+import {GrJava, GrSecure} from "react-icons/gr";
 import {FcAcceptDatabase, FcDataEncryption} from "react-icons/fc";
 import {RiJavascriptFill} from "react-icons/ri";
+import signInSignupJavaSwings from "@/assets/images/signin-signup-java-swings.png"
+import salonWebApp from "@/assets/images/salon-web-app.png"
+import {SiJsonwebtokens, SiSpring} from "react-icons/si";
+import {FaCodeBranch} from "react-icons/fa6";
 
 export const getAllProjects = (): Project[] => {
     return [
@@ -44,7 +47,6 @@ export const getFavoriteProjects = (): Project[] => {
                     to promote its mission and activities in the country.
                 </p>
                 <div className="mt-3">
-
                     <Chip
                         variant="light"
                         className="text-blue-500"
@@ -91,10 +93,117 @@ export const getFavoriteProjects = (): Project[] => {
             </>
         },
         {
-            name: "Student grading Shell",
+            name: "Salon Web App",
             contributors: "Moalosi Liteboho",
-            image: "https://source.unsplash.com/4Mw7nkQDByk",
-            githubUrl: "https://github.com/MoalosiLiteboho/student-grading-using-bash"
+            image: salonWebApp,
+            githubUrl: "https://github.com/MoalosiLiteboho/student-grading-using-bash",
+            body: <>
+                <div>
+                    <Chip
+                        variant="light"
+                        className="text-blue-500"
+                        endContent={<IoLogoReact />}
+                    >
+                        React
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-600"
+                        endContent={<BiLogoTypescript />}
+                    >
+                        Typescript
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-500"
+                        endContent={<BiLogoTailwindCss />}
+                    >
+                        Tailwind Css
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-yellow-500"
+                        endContent={<RiJavascriptFill />}
+                    >
+                        JavaScript
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-[#3c873a]"
+                        endContent={<DiNodejsSmall />}
+                    >
+                        NodeJs
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+                        endContent={<TbBrandFramerMotion className="text-violet-600" />}
+                    >
+                        Framer Motion
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-danger"
+                        endContent={<GrJava className="text-blue-600" />}
+                    >
+                        Java
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-green-600"
+                        endContent={<SiSpring />}
+                    >
+                        Spring Boot
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-green-600"
+                        endContent={<GrSecure />}
+                    >
+                        Spring Boot Security
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-blue-400 to-cyan-400"
+                        endContent={<SiJsonwebtokens className="text-cyan-400" />}
+                    >
+                        Jason Web Token
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-700"
+                        endContent={<BiLogoPostgresql />}
+                    >
+                        Postgres
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        endContent={<FcDataEncryption />}
+                    >
+                        Password Encryption
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-[#ff9900]"
+                        endContent={<TbBucket />}
+                    >
+                        S3 Buckets
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        endContent={<FaCodeBranch />}
+                    >
+                        GitHub Actions
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-500"
+                        endContent={<IoLogoDocker />}
+                    >
+                        Docker
+                    </Chip>
+                </div>
+            </>
         },
         {
             name: "University System",
