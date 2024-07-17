@@ -58,16 +58,30 @@ export default function ProjectCard({name, image, contributors, githubUrl, webUr
                         </div>
                         <div className="w-full flex justify-between items-center">
                             <div className="flex gap-x-1">
-                                <Chip
-                                    as={Link}
-                                    isExternal
-                                    href={webUrl}
-                                    startContent={<PiGlobeThin/>}
-                                    className="border-foreground border-1"
-                                    variant="bordered"
-                                >
-                                    Website
-                                </Chip>
+                                {webUrl && (
+                                    <Chip
+                                        as={Link}
+                                        isExternal
+                                        href={webUrl}
+                                        startContent={<PiGlobeThin/>}
+                                        className="border-foreground border-1"
+                                        variant="bordered"
+                                    >
+                                        Website
+                                    </Chip>
+                                )}
+                                {githubUrl && (
+                                    <Chip
+                                        as={Link}
+                                        isExternal
+                                        href={githubUrl}
+                                        startContent={<IoLogoGithub/>}
+                                        variant="bordered"
+                                        className="border-foreground border-1"
+                                    >
+                                        Source
+                                    </Chip>
+                                )}
                             </div>
                             <Button
                                 color="primary"
@@ -91,7 +105,7 @@ export default function ProjectCard({name, image, contributors, githubUrl, webUr
                                 </DrawerTrigger>
                                 <DrawerContent className="py-2 px-4 h-[80vh] md:h-[45vh] focus:outline-none">
                                     <DrawerHeader>{name}</DrawerHeader>
-                                    <ScrollArea className="mx-auto w-full max-wg-sm md:max-wg-md">
+                                    <ScrollArea className="mx-auto w-full max-wg-sm md:max-wg-md pr-3">
                                         <div>
                                             <div className="flex gap-x-1 items-center text-md">
                                                 <PiUsers/>
@@ -129,7 +143,7 @@ export default function ProjectCard({name, image, contributors, githubUrl, webUr
                                             </div>
                                         </div>
                                         {image &&
-                                            <div className="flex justify-center mb-10 w-full h-fit mt-4">
+                                            <div className="flex justify-center w-full h-fit mt-4">
                                                 <Image
                                                     alt={name + 'image'}
                                                     src={image}
@@ -137,7 +151,7 @@ export default function ProjectCard({name, image, contributors, githubUrl, webUr
                                                 />
                                             </div>
                                         }
-                                        <div className="mt-2">{body}</div>
+                                        <div className="mt-3">{body}</div>
                                     </ScrollArea>
                                 </DrawerContent>
                             </Drawer>
@@ -155,7 +169,7 @@ export default function ProjectCard({name, image, contributors, githubUrl, webUr
                     <>
                         <ModalHeader>{name}</ModalHeader>
                         <ModalBody className="-mt-4">
-                            <ScrollArea className="mx-auto w-full max-wg-sm md:max-wg-md">
+                            <ScrollArea className="mx-auto w-full max-wg-sm md:max-wg-md pr-3">
                                 <div>
                                     <div className="flex gap-x-1 items-center text-md">
                                         <PiUsers/>

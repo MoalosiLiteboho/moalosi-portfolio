@@ -4,6 +4,10 @@ import {IoLogoReact} from "react-icons/io5";
 import {BiLogoTailwindCss, BiLogoTypescript} from "react-icons/bi";
 import {DiNodejsSmall} from "react-icons/di";
 import {TbBrandFramerMotion} from "react-icons/tb";
+import {GrJava} from "react-icons/gr";
+import signInSignupJavaSwings from "@/assets/images/signin-signup-java-swings.png"
+import {FcAcceptDatabase, FcDataEncryption} from "react-icons/fc";
+import {RiJavascriptFill} from "react-icons/ri";
 
 export const getAllProjects = (): Project[] => {
     return [
@@ -39,7 +43,8 @@ export const getFavoriteProjects = (): Project[] => {
                     development and design professional. A website serves as an online presence for the Lesotho Chapter
                     to promote its mission and activities in the country.
                 </p>
-                <div className="mt-4">
+                <div className="mt-3">
+
                     <Chip
                         variant="light"
                         className="text-blue-500"
@@ -63,6 +68,13 @@ export const getFavoriteProjects = (): Project[] => {
                     </Chip>
                     <Chip
                         variant="light"
+                        className="text-yellow-500"
+                        endContent={<RiJavascriptFill />}
+                    >
+                        JavaScript
+                    </Chip>
+                    <Chip
+                        variant="light"
                         className="text-[#3c873a]"
                         endContent={<DiNodejsSmall />}
                     >
@@ -79,12 +91,6 @@ export const getFavoriteProjects = (): Project[] => {
             </>
         },
         {
-            name: "Login & SignUp Java-Swings",
-            contributors: "Moalosi Liteboho",
-            image: "https://user-images.githubusercontent.com/112495633/227000232-a0b1bb49-75d8-4886-bdcd-4dadc1dd7fe1.png",
-            githubUrl: "https://github.com/MoalosiLiteboho/desktop-application-logIn-and-registration-interface"
-        },
-        {
             name: "Student grading Shell",
             contributors: "Moalosi Liteboho",
             image: "https://source.unsplash.com/4Mw7nkQDByk",
@@ -96,5 +102,47 @@ export const getFavoriteProjects = (): Project[] => {
             image: "https://nextui.org/images/card-example-6.jpeg",
             githubUrl: "https://github.com/MoalosiLiteboho/moalosi-university-web-application"
         },
+        {
+            name: "SignIn & SignUp Java-Swings",
+            contributors: "Moalosi Liteboho",
+            image: signInSignupJavaSwings,
+            githubUrl: "https://github.com/MoalosiLiteboho/desktop-application-logIn-and-registration-interface",
+            body: <>
+                <p>
+                    This project is was build using java swings for UI, mysql database to store data and retrieve it,
+                    password encryption for security. It was build allow user to login if the user has account and also
+                    to register account if the user has no password and also it shows authentication errors.
+                </p>
+                <div className="mt-2">
+                    <Chip
+                        variant="light"
+                        className="text-danger"
+                        endContent={<GrJava className="text-blue-600" />}
+                    >
+                        Java
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        endContent={<FcDataEncryption />}
+                    >
+                        Password Encryption
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-danger"
+                        endContent={<GrJava className="text-blue-600" />}
+                    >
+                        Java Swings
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-700"
+                        endContent={<FcAcceptDatabase />}
+                    >
+                        MySql
+                    </Chip>
+                </div>
+            </>
+        }
     ];
 }
