@@ -9,7 +9,8 @@ import {
     Modal,
     ModalBody,
     ModalContent,
-    ModalHeader, useDisclosure
+    ModalHeader,
+    useDisclosure
 } from "@nextui-org/react";
 import {PiGlobeThin, PiUsers} from "react-icons/pi";
 import {IoLogoGithub} from "react-icons/io5";

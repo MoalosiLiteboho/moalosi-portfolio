@@ -99,7 +99,7 @@ export default function HomePage() {
                                         href={socialLink.route}
                                         radius="full"
                                         variant="light"
-                                        className={cn("h-8", socialLink.color || "")}>
+                                        className={cn("h-8 ", socialLink.color || "")}>
                                         {socialLink.icon}
                                     </Button>
                                 ))}
