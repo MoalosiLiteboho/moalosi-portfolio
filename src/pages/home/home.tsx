@@ -1,56 +1,18 @@
 import {Button, Card, CardBody, CardHeader, cn, Image, Link, User} from "@nextui-org/react";
 import Marquee from "react-fast-marquee";
 import {IoMdArrowForward} from "react-icons/io";
+import {GoVerified} from "react-icons/go";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import myProfileImage from "@/assets/images/me2.jpeg"
 import myCv from "@/assets/pdf/Moalosi CV.pdf"
 import ProjectCard from "@/pages/projects/project-card.tsx";
 import {getFavoriteProjects} from "@/pages/projects/get-all-projects.tsx";
+import {reviews} from "@/pages/home/reviews.tsx";
 
 const words = ["Software Engineer.", "Backend Engineer.", "Frontend Engineer.", "DevOps Engineer."];
 
-const reviews = [
-    {
-        name: "Jack",
-        username: "@jack",
-        body: "I've never seen anything like this before. It's amazing. I love it.",
-        img: "https://avatar.vercel.sh/jack",
-    },
-    {
-        name: "Jill",
-        username: "@jill",
-        body: "I don't know what to say. I'm speechless. This is amazing.",
-        img: "https://avatar.vercel.sh/jill",
-    },
-    {
-        name: "John",
-        username: "@john",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/john",
-    },
-    {
-        name: "Jane",
-        username: "@jane",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/jane",
-    },
-    {
-        name: "Jenny",
-        username: "@jenny",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/jenny",
-    },
-    {
-        name: "James",
-        username: "@james",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        img: "https://avatar.vercel.sh/james",
-    },
-];
-
 export default function HomePage() {
-
     return (
         <>
             <main className="h-screen w-full flex justify-center md:h-fit lg:h-screen items-center md:px-5">
@@ -153,7 +115,15 @@ export default function HomePage() {
                                 <CardHeader>
                                     <User
                                         name={review.name}
-                                        description={review.username}
+                                        description={(
+                                            <Link
+                                                href={review.profileLink}
+                                                className="flex items-center gap-x-1 text-tiny hover:underline"
+                                            >
+                                                <GoVerified />
+                                                <span>{review.status}</span>
+                                            </Link>
+                                        )}
                                         avatarProps={{
                                             src: `${review.img}`
                                         }}

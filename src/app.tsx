@@ -4,9 +4,9 @@ import {ThemeProvider as NextThemesProvider} from "next-themes";
 import NavigationBar from "@/components/navigation/navigation-bar.tsx";
 import Footer from "@/components/ui/footer.tsx";
 import ErrorPage from "@/pages/error.tsx";
-import HomePage from "@/pages/home.tsx";
+import HomePage from "@/pages/home/home.tsx";
 import ProjectPage from "@/pages/projects/projects.tsx";
-import AboutMePage from "@/pages/about-me.tsx";
+import AboutMePage from "@/pages/about/about-me.tsx";
 
 export default function App() {
     const navigate = useNavigate();
