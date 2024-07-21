@@ -121,7 +121,10 @@ export default function HomePage() {
                                                 className="flex items-center gap-x-1 text-tiny hover:underline"
                                             >
                                                 <GoVerified />
-                                                <span>{review.status}</span>
+                                                {typeof review.status === 'string' ?
+                                                    <span>{review.status}</span>
+                                                    : <span>{review.status.join(", ")}</span>
+                                                }
                                             </Link>
                                         )}
                                         avatarProps={{
