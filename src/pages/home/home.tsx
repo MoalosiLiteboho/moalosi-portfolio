@@ -16,7 +16,7 @@ export default function HomePage() {
     return (
         <>
             <main className="h-screen w-full flex justify-center md:h-fit lg:h-screen items-center md:px-5">
-                <div className="h-fit w-full mt-5 md:mt-10 lg:-mt-10 flex flex-col items-center md:justify-center gap-y-10 md:flex-row-reverse md:gap-x-2 md:items-start">
+                <div className="h-fit w-full md:mt-10 lg:-mt-10 flex flex-col items-center md:justify-center gap-y-10 md:flex-row-reverse md:gap-x-2 md:items-start">
                     <div className="w-[12em] h-[12em] md:w-[19em] md:h-[15em] lg:w-[16em] lg:h-[16em]">
                         <Image
                             removeWrapper
@@ -40,7 +40,7 @@ export default function HomePage() {
                                 Twitter.
                             </p>
                         </div>
-                        <div className="flex flex-col gap-x-3 items-center mt-5">
+                        <div className="flex flex-col gap-x-3 items-center mt-5 md:flex-row">
                             <Button
                                 as={Link}
                                 href={myCv}
@@ -51,7 +51,7 @@ export default function HomePage() {
                             >
                                 Download CV
                             </Button>
-                            <div className="flex justify-center items-center mt-5 gap-x-0">
+                            <div className="flex justify-center items-center mt-5 md:mt-0 gap-x-0">
                                 {SocialMediaLinks().map((socialLink, index) => (
                                     <Button
                                         key={index}
