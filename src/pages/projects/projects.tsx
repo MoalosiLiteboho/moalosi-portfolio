@@ -1,8 +1,10 @@
 import {Tab, Tabs} from "@nextui-org/react";
+import {useSearchParams} from "react-router-dom";
 import ProjectLayoutPage from "@/pages/projects/project-layout.tsx";
 import {useProjects} from "@/pages/projects/use-projects.ts";
 
 export default function ProjectPage() {
+    const [searchParams, setSearchParams] = useSearchParams();
     const {loading, upComing, completed, inProcess} = useProjects();
 
     return (
@@ -13,6 +15,8 @@ export default function ProjectPage() {
                     color="primary"
                     variant="bordered"
                     radius="full"
+                    selectedKey={searchParams.get("tab") || 'completed'}
+                    onSelectionChange={value => setSearchParams({"tab": String(value)}, {replace: true})}
                 >
                     <Tab key="completed" title="Completed">
                         <ProjectLayoutPage
