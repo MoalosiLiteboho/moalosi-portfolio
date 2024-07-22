@@ -1,10 +1,10 @@
 import {ReactNode} from "react";
-import {SiSpring} from "react-icons/si";
+import {SiGraphql, SiJsonwebtokens, SiSpring} from "react-icons/si";
 import {GrJava, GrSecure} from "react-icons/gr";
 import {FaCode, FaCodeBranch, FaLinux, FaPython, FaReact, FaRegComments} from "react-icons/fa6";
-import {TbBrandCSharp, TbBucket} from "react-icons/tb";
+import {TbBrandCSharp, TbBrandFramerMotion, TbBucket} from "react-icons/tb";
 import {CgCPlusPlus} from "react-icons/cg";
-import {BiLogoJavascript, BiLogoPostgresql, BiLogoTypescript} from "react-icons/bi";
+import {BiLogoJavascript, BiLogoPostgresql, BiLogoTailwindCss, BiLogoTypescript} from "react-icons/bi";
 import {VscTerminalPowershell} from "react-icons/vsc";
 import {IoLogoDocker, IoLogoGithub, IoLogoNodejs} from "react-icons/io5";
 import {BsBoxes, BsFiletypePhp} from "react-icons/bs";
@@ -132,6 +132,26 @@ export const getMySkills = (): Skill[] => {
             className: "text-green-600 border-green-600",
             tittle: "Spring boot Security",
             icon: <SiSpring className="mr-1"/>
+        },
+        {
+            className: "text-[#e535ab] border-[#e535ab]",
+            tittle: "GraphQl",
+            icon: <SiGraphql className="mr-1"/>
+        },
+        {
+            className: "bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-blue-400 to-cyan-400 border-cyan-400",
+            tittle: "Json Web Token",
+            icon: <SiJsonwebtokens className="mr-1 text-cyan-400"/>
+        },
+        {
+            className: "text-blue-500 border-blue-500",
+            tittle: "Tailwind Css",
+            icon: <BiLogoTailwindCss className="mr-1"/>
+        },
+        {
+            className: "bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 border-violet-600",
+            tittle: "Framer Motion",
+            icon: <TbBrandFramerMotion className="mr-1 text-violet-600"/>
         },
     ]
 }
