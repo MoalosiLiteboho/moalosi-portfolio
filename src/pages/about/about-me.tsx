@@ -1,4 +1,4 @@
-import {Accordion, AccordionItem, Avatar, Button, Card, CardBody, Chip, Link} from "@nextui-org/react";
+import {Accordion, AccordionItem, Avatar, Button, Card, CardBody, Chip, cn, Link} from "@nextui-org/react";
 import {getEducation} from "@/pages/about/get-education.tsx";
 import {getMySkills} from "@/pages/about/get-skills.tsx";
 import {getExperience} from "@/pages/about/get-experience.tsx";
@@ -51,9 +51,8 @@ export default function AboutMePage() {
                         {getMySkills().map((skill, index) => (
                             <Chip
                                 key={index}
-                                variant="flat"
-                                className="m-1"
-                                color={skill.color}
+                                variant="bordered"
+                                className={cn("m-0.5", skill.className)}
                                 endContent={skill.icon}
                             >
                                 {skill.tittle}
