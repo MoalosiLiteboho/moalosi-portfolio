@@ -1,6 +1,6 @@
 import {ReactNode} from "react";
 import {SiGraphql, SiJsonwebtokens, SiSpring} from "react-icons/si";
-import {GrJava, GrSecure} from "react-icons/gr";
+import {GrJava, GrMysql, GrOracle, GrSecure} from "react-icons/gr";
 import {FaCode, FaCodeBranch, FaLinux, FaPython, FaReact, FaRegComments} from "react-icons/fa6";
 import {TbBrandCSharp, TbBrandFramerMotion, TbBucket} from "react-icons/tb";
 import {CgCPlusPlus} from "react-icons/cg";
@@ -9,6 +9,7 @@ import {VscTerminalPowershell} from "react-icons/vsc";
 import {IoLogoDocker, IoLogoGithub, IoLogoNodejs} from "react-icons/io5";
 import {BsBoxes, BsFiletypePhp} from "react-icons/bs";
 import {LiaBrainSolid} from "react-icons/lia";
+import {FcRadarPlot} from "react-icons/fc";
 
 export type Skill = {
     tittle: string;
@@ -152,6 +153,21 @@ export const getMySkills = (): Skill[] => {
             className: "bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 border-violet-600",
             tittle: "Framer Motion",
             icon: <TbBrandFramerMotion className="mr-1 text-violet-600"/>
+        },
+        {
+            className: "text-yellow-500 border-blue-600",
+            tittle: "MySql",
+            icon: <GrMysql className="mr-1 text-blue-600"/>
+        },
+        {
+            className: "text-danger-500 border-danger-500",
+            tittle: "Oracle",
+            icon: <GrOracle className="mr-1"/>
+        },
+        {
+            className: "border-foreground",
+            tittle: "Data Structure & Algorithms",
+            icon: <FcRadarPlot className="mr-1"/>
         },
     ]
 }

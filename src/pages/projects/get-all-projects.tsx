@@ -9,6 +9,7 @@ import {FcAcceptDatabase, FcDataEncryption} from "react-icons/fc";
 import {RiJavascriptFill} from "react-icons/ri";
 import signInSignupJavaSwings from "@/assets/images/signin-signup-java-swings.png"
 import salonWebApp from "@/assets/images/salon-web-app.png"
+import isocLesothoApp from "@/assets/images/isoc_lesotho_app.png"
 import {SiJsonwebtokens, SiSpring} from "react-icons/si";
 import {FaCodeBranch} from "react-icons/fa6";
 
@@ -18,7 +19,7 @@ export const getAllProjects = (): Project[] => {
             name: "ISOC Lesotho Chapter",
             contributors: "Moalosi Liteboho",
             status: "completed",
-            image: "https://isoc.org.ls/wp-content/uploads/2020/08/background_isoc-1.png",
+            image: isocLesothoApp,
             webUrl: "https://isoc.org.ls/",
             body: <>
                 <p>
@@ -244,7 +245,7 @@ export const getFavoriteProjects = (): Project[] => {
         {
             name: "ISOC Lesotho Chapter",
             contributors: "Moalosi Liteboho",
-            image: "https://isoc.org.ls/wp-content/uploads/2020/08/background_isoc-1.png",
+            image: isocLesothoApp,
             webUrl: "https://isoc.org.ls/",
             body: <>
                 <p>
