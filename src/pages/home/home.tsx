@@ -9,7 +9,7 @@ import ProjectCard from "@/pages/projects/project-card.tsx";
 import {getFavoriteProjects} from "@/pages/projects/get-all-projects.tsx";
 import {reviews} from "@/pages/home/reviews.tsx";
 
-const words = ["Software Engineer.", "Backend Engineer.", "Frontend Engineer.", "DevOps Engineer."];
+const words = ["Software Engineer.", "FullStack Developer.", "Java Developer", "DevOps Engineer.", "CTF Player"];
 
 export default function HomePage() {
     return (
