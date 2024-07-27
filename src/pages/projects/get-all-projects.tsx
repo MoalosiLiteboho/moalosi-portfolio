@@ -7,11 +7,13 @@ import {TbBrandFramerMotion, TbBucket} from "react-icons/tb";
 import {GrJava, GrSecure} from "react-icons/gr";
 import {FcAcceptDatabase, FcDataEncryption} from "react-icons/fc";
 import {RiJavascriptFill} from "react-icons/ri";
+import {FaCodeBranch} from "react-icons/fa6";
+import {SiAxios, SiJsonwebtokens, SiSpring} from "react-icons/si";
 import signInSignupJavaSwings from "@/assets/images/signin-signup-java-swings.png"
 import salonWebApp from "@/assets/images/salon-web-app.png"
 import isocLesothoApp from "@/assets/images/isoc_lesotho_app.png"
-import {SiJsonwebtokens, SiSpring} from "react-icons/si";
-import {FaCodeBranch} from "react-icons/fa6";
+import happyBirthdayApp from "@/assets/images/happy-birthday-app.png"
+import {CiServer} from "react-icons/ci";
 
 export const getAllProjects = (): Project[] => {
     return [
@@ -74,6 +76,79 @@ export const getAllProjects = (): Project[] => {
             </>
         },
         {
+            name: "Happy Birthday App",
+            contributors: "Moalosi Liteboho",
+            status: "completed",
+            image: happyBirthdayApp,
+            githubUrl: "https://github.com/MoalosiLiteboho/moalosi-birthday-app",
+            body: <>
+                <p>
+                    This project was made in my birthday to display birthday wishes people wish for me. It store messages
+                    in json file and retrieve them and display by rendering them one by one in a loop form. Json server acts
+                    as an api for my app and every request is send using axios library. Form is used to add data to the server
+                    if data is validated and also sooner library is used to display notification either error or success ones.
+                </p>
+                <div className="mt-3">
+                    <Chip
+                        variant="light"
+                        className="text-blue-500"
+                        endContent={<IoLogoReact/>}
+                    >
+                        React
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-foreground"
+                        endContent={<SiAxios/>}
+                    >
+                        Axios
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-600"
+                        endContent={<BiLogoTypescript/>}
+                    >
+                        Typescript
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-500"
+                        endContent={<BiLogoTailwindCss/>}
+                    >
+                        Tailwind Css
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-yellow-500"
+                        endContent={<RiJavascriptFill/>}
+                    >
+                        JavaScript
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-[#3c873a]"
+                        endContent={<DiNodejsSmall/>}
+                    >
+                        NodeJs
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-foreground"
+                        endContent={<CiServer/>}
+                    >
+                        Json Server
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+                        endContent={<TbBrandFramerMotion className="text-violet-600"/>}
+                    >
+                        Framer Motion
+                    </Chip>
+                </div>
+            </>
+        },
+        {
             name: "Salon Web App",
             contributors: "Moalosi Liteboho",
             status: "in-process",
@@ -84,35 +159,35 @@ export const getAllProjects = (): Project[] => {
                     <Chip
                         variant="light"
                         className="text-blue-500"
-                        endContent={<IoLogoReact />}
+                        endContent={<IoLogoReact/>}
                     >
                         React
                     </Chip>
                     <Chip
                         variant="light"
                         className="text-blue-600"
-                        endContent={<BiLogoTypescript />}
+                        endContent={<BiLogoTypescript/>}
                     >
                         Typescript
                     </Chip>
                     <Chip
                         variant="light"
                         className="text-blue-500"
-                        endContent={<BiLogoTailwindCss />}
+                        endContent={<BiLogoTailwindCss/>}
                     >
                         Tailwind Css
                     </Chip>
                     <Chip
                         variant="light"
                         className="text-yellow-500"
-                        endContent={<RiJavascriptFill />}
+                        endContent={<RiJavascriptFill/>}
                     >
                         JavaScript
                     </Chip>
                     <Chip
                         variant="light"
                         className="text-[#3c873a]"
-                        endContent={<DiNodejsSmall />}
+                        endContent={<DiNodejsSmall/>}
                     >
                         NodeJs
                     </Chip>
