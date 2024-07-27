@@ -14,6 +14,7 @@ import {
 } from "@nextui-org/react";
 import {PiGlobeThin, PiUsers} from "react-icons/pi";
 import {IoLogoGithub} from "react-icons/io5";
+import {CgUnavailable} from "react-icons/cg";
 import {ScrollArea} from "@/components/ui/scroll-area.tsx";
 import {Drawer, DrawerContent, DrawerHeader, DrawerTrigger} from "@/components/ui/drawer.tsx";
 
@@ -81,6 +82,15 @@ export default function ProjectCard({name, image, contributors, githubUrl, webUr
                                         className="border-foreground border-1"
                                     >
                                         Source
+                                    </Chip>
+                                )}
+                                {!githubUrl && !webUrl && (
+                                    <Chip
+                                        startContent={<CgUnavailable />}
+                                        variant="bordered"
+                                        className="border-foreground border-1"
+                                    >
+                                        Not Deployed Yet
                                     </Chip>
                                 )}
                             </div>

@@ -153,7 +153,6 @@ export const getAllProjects = (): Project[] => {
             contributors: "Moalosi Liteboho",
             status: "in-process",
             image: salonWebApp,
-            githubUrl: "https://github.com/MoalosiLiteboho/student-grading-using-bash",
             body: <>
                 <div>
                     <Chip
@@ -378,7 +377,6 @@ export const getFavoriteProjects = (): Project[] => {
             name: "Salon Web App",
             contributors: "Moalosi Liteboho",
             image: salonWebApp,
-            githubUrl: "https://github.com/MoalosiLiteboho/student-grading-using-bash",
             body: <>
                 <div>
                     <Chip
