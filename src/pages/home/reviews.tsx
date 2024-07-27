@@ -20,7 +20,7 @@ export const reviews: ReviewType[] = [
     },
     {
         name: "Selekane Khaile",
-        status: ["Cybersecurity", "CTF Player", "Junior Sock Analyst", "Captain@Cybersecurity SANReN 2022 Challenge"],
+        status: ["Cybersecurity", "CTF Player", "Junior SOC Analyst", "Captain@Cybersecurity SANReN 2022 Challenge"],
         profileLink: "mailto:khaileselakane@gmail.com",
         className: "md:col-span-2 lg:col-span-3",
         img: "https://avatar.vercel.sh/james",
