@@ -1,5 +1,4 @@
 import {Button, Card, CardBody, CardHeader, cn, Image, Link, User} from "@nextui-org/react";
-import Marquee from "react-fast-marquee";
 import {IoMdArrowForward} from "react-icons/io";
 import {GoVerified} from "react-icons/go";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
@@ -95,22 +94,17 @@ export default function HomePage() {
                     See More
                 </Button>
             </section>
-            <section>
+            <section className="px-5">
                 <h1 className="flex gap-x-1 text-2xl justify-center font-light">
                     <span>Kind words about</span>
                     <span className="text-primary">My Effort</span>
                 </h1>
-                <div className="h-fit w-full">
-                    <Marquee
-                        pauseOnClick
-                        pauseOnHover
-                        direction="right"
-                        className="py-6"
-                    >
+                <div className="w-full h-fit flex items-center justify-center mt-3">
+                    <div className="w-full h-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-3">
                         {reviews.map((review, index) => (
                             <Card
                                 key={index}
-                                className="w-[20em] mx-2"
+                                className={cn(review.className)}
                             >
                                 <CardHeader>
                                     <User
@@ -120,7 +114,7 @@ export default function HomePage() {
                                                 href={review.profileLink}
                                                 className="flex items-center gap-x-1 text-tiny hover:underline"
                                             >
-                                                <GoVerified />
+                                                <GoVerified/>
                                                 {typeof review.status === 'string' ?
                                                     <span>{review.status}</span>
                                                     : <span>{review.status.join(", ")}</span>
@@ -141,7 +135,7 @@ export default function HomePage() {
                                 </CardBody>
                             </Card>
                         ))}
-                    </Marquee>
+                    </div>
                 </div>
             </section>
         </>
