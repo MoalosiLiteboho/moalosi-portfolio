@@ -114,7 +114,7 @@ export default function HomePage() {
                                                 href={review.profileLink}
                                                 className="flex items-center gap-x-1 text-tiny hover:underline"
                                             >
-                                                <GoVerified/>
+                                                <GoVerified className="text-lg" />
                                                 {typeof review.status === 'string' ?
                                                     <span>{review.status}</span>
                                                     : <span>{review.status.join(", ")}</span>
@@ -122,7 +122,9 @@ export default function HomePage() {
                                             </Link>
                                         )}
                                         avatarProps={{
-                                            src: `${review.img}`
+                                            src: `${review.img}`,
+                                            color: "primary",
+                                            className: `${review.avatarClassName}`
                                         }}
                                     />
                                 </CardHeader>
