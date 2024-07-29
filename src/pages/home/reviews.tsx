@@ -31,7 +31,7 @@ export const reviews: ReviewType[] = [
         name: "Mamoqenelo Morolong",
         status: ["Part-time Lecturer@Botho University"],
         profileLink: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7221866632522964992?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7221866632522964992%2C7221984839246184450%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287221984839246184450%2Curn%3Ali%3AugcPost%3A7221866632522964992%29",
-        className: "md:col-span-2 lg:col-span-3",
+        className: "md:col-span-2",
         avatarClassName: "w-fit lg:w-fit",
         img: "https://avatar.vercel.sh/james",
         body: "You really did a great Job Liteboho Moalosi. I am very proud of you. Keep growing, keep showing out those skills. I can vividly and proudly attest to how talented you are. Well I saw his coding skills when we attended the Sanren cybersecurity challenges for the very first time in 2022 in Pretoria. Keep up the good work.",
