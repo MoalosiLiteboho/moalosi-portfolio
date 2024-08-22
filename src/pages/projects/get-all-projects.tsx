@@ -327,6 +327,50 @@ export const getFavoriteProjects = (): Project[] => {
                     development and design professional. A website serves as an online presence for the Lesotho Chapter
                     to promote its mission and activities in the country.
                 </p>
+                <div className="mt-3">
+                    <Chip
+                        variant="light"
+                        className="text-blue-500"
+                        endContent={<IoLogoReact />}
+                    >
+                        React
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-600"
+                        endContent={<BiLogoTypescript />}
+                    >
+                        Typescript
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-blue-500"
+                        endContent={<BiLogoTailwindCss />}
+                    >
+                        Tailwind Css
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-yellow-500"
+                        endContent={<RiJavascriptFill />}
+                    >
+                        JavaScript
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-[#3c873a]"
+                        endContent={<DiNodejsSmall />}
+                    >
+                        NodeJs
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
+                        endContent={<TbBrandFramerMotion className="text-violet-600" />}
+                    >
+                        Framer Motion
+                    </Chip>
+                </div>
             </>
         },
         {
