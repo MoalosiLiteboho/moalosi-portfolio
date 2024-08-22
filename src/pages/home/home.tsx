@@ -35,7 +35,7 @@ export default function HomePage() {
                                 <FlipWords words={words} className="text-primary"/>
                             </h3>
                             <p className="text-center">
-                                I love building things and assisting people with my heat. Very active on LinkedIn and
+                                I love building things and assisting people with my heart. Very active on LinkedIn and
                                 Twitter.
                             </p>
                         </div>
