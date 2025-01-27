@@ -1,5 +1,5 @@
 import {ReactNode} from "react";
-import {SiGraphql, SiJsonwebtokens, SiSpring} from "react-icons/si";
+import {SiGraphql, SiJsonwebtokens, SiKubernetes, SiSpring} from "react-icons/si";
 import {GrJava, GrMysql, GrOracle, GrSecure} from "react-icons/gr";
 import {FaCode, FaCodeBranch, FaLinux, FaPython, FaReact, FaRegComments} from "react-icons/fa6";
 import {TbBrandCSharp, TbBrandFramerMotion, TbBucket} from "react-icons/tb";
@@ -10,6 +10,8 @@ import {IoLogoDocker, IoLogoGithub, IoLogoNodejs} from "react-icons/io5";
 import {BsBoxes, BsFiletypePhp} from "react-icons/bs";
 import {LiaBrainSolid} from "react-icons/lia";
 import {FcRadarPlot} from "react-icons/fc";
+import {RiMoreLine} from "react-icons/ri";
+import {CiServer} from "react-icons/ci";
 
 export type Skill = {
     tittle: string;
@@ -168,6 +170,31 @@ export const getMySkills = (): Skill[] => {
             className: "border-foreground",
             tittle: "Data Structure & Algorithms",
             icon: <FcRadarPlot className="mr-1"/>
+        },
+        {
+            className: "border-primary text-primary",
+            tittle: "Kubernetes",
+            icon: <SiKubernetes className="mr-1"/>
+        },
+        {
+            className: "border-foreground",
+            tittle: "VPS Configuration and Deployment",
+            icon: <CiServer className="mr-1"/>
+        },
+        {
+            className: "text-green-600 border-green-600",
+            tittle: "Spring boot Authorization",
+            icon: <SiSpring className="mr-1"/>
+        },
+        {
+            className: "text-green-600 border-green-600",
+            tittle: "Spring boot Cloud",
+            icon: <SiSpring className="mr-1"/>
+        },
+        {
+            className: "border-foreground",
+            tittle: "Many More",
+            icon: <RiMoreLine className="mr-1"/>
         },
     ]
 }
