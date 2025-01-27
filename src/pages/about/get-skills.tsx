@@ -1,6 +1,6 @@
 import {ReactNode} from "react";
 import {SiGraphql, SiJsonwebtokens, SiKubernetes, SiSpring} from "react-icons/si";
-import {GrJava, GrMysql, GrOracle, GrSecure} from "react-icons/gr";
+import {GrJava, GrMysql, GrOracle, GrSecure, GrShieldSecurity} from "react-icons/gr";
 import {FaCode, FaCodeBranch, FaLinux, FaPython, FaReact, FaRegComments} from "react-icons/fa6";
 import {TbBrandCSharp, TbBrandFramerMotion, TbBucket} from "react-icons/tb";
 import {CgCPlusPlus} from "react-icons/cg";
@@ -10,7 +10,7 @@ import {IoLogoDocker, IoLogoGithub, IoLogoNodejs} from "react-icons/io5";
 import {BsBoxes, BsFiletypePhp} from "react-icons/bs";
 import {LiaBrainSolid} from "react-icons/lia";
 import {FcRadarPlot} from "react-icons/fc";
-import {RiMoreLine} from "react-icons/ri";
+import {RiMoreLine, RiNextjsFill} from "react-icons/ri";
 import {CiServer} from "react-icons/ci";
 
 export type Skill = {
@@ -187,9 +187,19 @@ export const getMySkills = (): Skill[] => {
             icon: <SiSpring className="mr-1"/>
         },
         {
+            className: "border-foreground",
+            tittle: "Next Auth",
+            icon: <GrShieldSecurity className="mr-1"/>
+        },
+        {
             className: "text-green-600 border-green-600",
             tittle: "Spring boot Cloud",
             icon: <SiSpring className="mr-1"/>
+        },
+        {
+            className: "border-foreground",
+            tittle: "NextJs",
+            icon: <RiNextjsFill className="mr-1"/>
         },
         {
             className: "border-foreground",
