@@ -4,19 +4,21 @@ import {
     Card,
     CardFooter,
     Chip,
+    Drawer,
+    DrawerContent,
+    DrawerHeader,
     Image,
     Link,
     Modal,
-    ModalBody,
     ModalContent,
     ModalHeader,
+    ScrollShadow,
     useDisclosure
 } from "@heroui/react";
 import {PiGlobeThin, PiUsers} from "react-icons/pi";
 import {IoLogoGithub} from "react-icons/io5";
 import {CgUnavailable} from "react-icons/cg";
-import {ScrollArea} from "@/components/ui/scroll-area.tsx";
-import {Drawer, DrawerContent, DrawerHeader, DrawerTrigger} from "@/components/ui/drawer.tsx";
+import useScreenType from "react-screentype-hook";
 
 export type Project = {
     name: string;
@@ -35,6 +37,7 @@ export type ProjectCardProps = Project & {
 
 export default function ProjectCard({name, image, contributors, githubUrl, webUrl, icon, body}: ProjectCardProps) {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    const screenType = useScreenType();
 
     return (
         <>
@@ -98,133 +101,140 @@ export default function ProjectCard({name, image, contributors, githubUrl, webUr
                                 color="primary"
                                 variant="shadow"
                                 size="sm"
-                                className="w-fit hidden lg:flex"
+                                className="w-fit"
                                 onPress={onOpen}
                             >
                                 More
                             </Button>
-                            <Drawer>
-                                <DrawerTrigger asChild>
-                                    <Button
-                                        color="primary"
-                                        variant="shadow"
-                                        size="sm"
-                                        className="w-fit lg:hidden"
-                                    >
-                                        More
-                                    </Button>
-                                </DrawerTrigger>
-                                <DrawerContent className="py-2 px-4 h-[80vh] md:h-[45vh] focus:outline-none">
-                                    <DrawerHeader>{name}</DrawerHeader>
-                                    <ScrollArea className="mx-auto w-full max-wg-sm md:max-wg-md pr-3">
-                                        <div>
-                                            <div className="flex gap-x-1 items-center text-md">
-                                                <PiUsers/>
-                                                <span>{contributors}</span>
-                                            </div>
-                                            <div className="flex gap-x-1">
-                                                {webUrl && (
-                                                    <Chip
-                                                        as={Link}
-                                                        isExternal
-                                                        href={webUrl}
-                                                        startContent={<PiGlobeThin/>}
-                                                        variant="bordered"
-                                                        className="text-foreground"
-                                                        classNames={{
-                                                            base: "border-black dark:border-white"
-                                                        }}
-                                                    >
-                                                        Website
-                                                    </Chip>
-                                                )}
-                                                {githubUrl && (
-                                                    <Chip
-                                                        as={Link}
-                                                        isExternal
-                                                        href={githubUrl}
-                                                        startContent={<IoLogoGithub/>}
-                                                        variant="bordered"
-                                                        className="text-foreground"
-                                                        color="primary"
-                                                    >
-                                                        Source
-                                                    </Chip>
-                                                )}
-                                            </div>
-                                        </div>
-                                        {image &&
-                                            <div className="flex justify-center w-full h-fit mt-4">
-                                                <Image
-                                                    alt={name + 'image'}
-                                                    src={image}
-                                                    className=" w-full h-full"
-                                                />
-                                            </div>
-                                        }
-                                        <div className="mt-3">{body}</div>
-                                    </ScrollArea>
-                                </DrawerContent>
-                            </Drawer>
                         </div>
                     </div>
                 </CardFooter>
-            </Card>
-            <Modal
-                isOpen={isOpen}
+            </Card>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+            <Drawer
+                size="md"
+                placement="bottom"
+                scrollBehavior="inside"
+                isOpen={isOpen && (screenType.isMobile || screenType.isTablet)}
                 onOpenChange={onOpenChange}
-                size="2xl"
+            >
+                <DrawerContent>
+                    <>
+                        <DrawerHeader>{name}</DrawerHeader>
+                        <ScrollShadow
+                            hideScrollBar
+                            orientation="horizontal"
+                            className="mx-auto w-full max-wg-sm md:max-wg-md p-5"
+                            offset={100}
+                        >
+                            <div className="flex flex-col gap-y-4">
+                                <div className="flex gap-x-1 items-center text-md">
+                                    <PiUsers/>
+                                    <span>{contributors}</span>
+                                </div>
+                                <div className="flex gap-x-1">
+                                    {webUrl && (
+                                        <Chip
+                                            as={Link}
+                                            isExternal
+                                            href={webUrl}
+                                            startContent={<PiGlobeThin/>}
+                                            variant="bordered"
+                                            className="text-foreground"
+                                            classNames={{
+                                                base: "border-black dark:border-white"
+                                            }}
+                                        >
+                                            Website
+                                        </Chip>
+                                    )}
+                                    {githubUrl && (
+                                        <Chip
+                                            as={Link}
+                                            isExternal
+                                            href={githubUrl}
+                                            startContent={<IoLogoGithub/>}
+                                            variant="bordered"
+                                            className="text-foreground"
+                                            color="primary"
+                                        >
+                                            Source
+                                        </Chip>
+                                    )}
+                                </div>
+                            </div>
+                            {image &&
+                                <div className="flex justify-center w-full h-fit mt-4">
+                                    <Image
+                                        alt={name + 'image'}
+                                        src={image}
+                                        className=" w-full h-full"
+                                    />
+                                </div>
+                            }
+                            <div className="mt-3">{body}</div>
+                        </ScrollShadow>
+                    </>
+                </DrawerContent>
+            </Drawer>
+            <Modal
+                scrollBehavior="inside"
+                isOpen={isOpen && (screenType.isDesktop || screenType.isLargeDesktop)}
+                onOpenChange={onOpenChange}
+                size="3xl"
                 className="hidden lg:flex"
             >
                 <ModalContent className="hidden p-3 lg:flex">
                     <>
                         <ModalHeader>{name}</ModalHeader>
-                        <ModalBody className="-mt-4">
-                            <ScrollArea className="mx-auto w-full max-wg-sm md:max-wg-md pr-3">
-                                <div>
-                                    <div className="flex gap-x-1 items-center text-md">
-                                        <PiUsers/>
-                                        <span>{contributors}</span>
-                                    </div>
-                                    <div className="flex gap-x-1">
-                                        {webUrl && (
-                                            <Chip
-                                                as={Link}
-                                                isExternal
-                                                href={webUrl}
-                                                startContent={<PiGlobeThin/>}
-                                                variant="bordered"
-                                                className="text-foreground border-foreground border-1"
-                                            >
-                                                Website
-                                            </Chip>
-                                        )}
-                                        {githubUrl && (
-                                            <Chip
-                                                as={Link}
-                                                isExternal
-                                                href={githubUrl}
-                                                startContent={<IoLogoGithub/>}
-                                                variant="bordered"
-                                                className="text-foreground border-foreground border-1"
-                                            >
-                                                Source
-                                            </Chip>
-                                        )}
-                                    </div>
+                        <ScrollShadow
+                            hideScrollBar
+                            orientation="horizontal"
+                            className="mx-auto w-full max-wg-sm md:max-wg-md p-5"
+                            offset={100}
+                        >
+                            <div>
+                                <div className="flex gap-x-1 items-center text-md">
+                                    <PiUsers/>
+                                    <span>{contributors}</span>
                                 </div>
-                                {image &&
-                                    <div className="flex justify-center mb-10 w-full h-fit mt-5">
-                                        <Image
-                                            alt={name + 'image'}
-                                            src={image}
-                                            className=" w-full h-full"
-                                        />
-                                    </div>
-                                }
-                                <div className="mt-2">{body}</div>
-                            </ScrollArea>
-                        </ModalBody>
+                                <div className="flex gap-x-1">
+                                    {webUrl && (
+                                        <Chip
+                                            as={Link}
+                                            isExternal
+                                            href={webUrl}
+                                            startContent={<PiGlobeThin/>}
+                                            variant="bordered"
+                                            className="text-foreground border-foreground border-1"
+                                        >
+                                            Website
+                                        </Chip>
+                                    )}
+                                    {githubUrl && (
+                                        <Chip
+                                            as={Link}
+                                            isExternal
+                                            href={githubUrl}
+                                            startContent={<IoLogoGithub/>}
+                                            variant="bordered"
+                                            className="text-foreground border-foreground border-1"
+                                        >
+                                            Source
+                                        </Chip>
+                                    )}
+                                </div>
+                            </div>
+                            {image &&
+                                <div className="flex justify-center mb-10 w-full h-fit mt-5">
+                                    <Image
+                                        alt={name + 'image'}
+                                        src={image}
+                                        className=" w-full h-full"
+                                    />
+                                </div>
+                            }
+                            <div className="mt-2">{body}</div>
+                        </ScrollShadow>
                     </>
                 </ModalContent>
             </Modal>

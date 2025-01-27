@@ -1,5 +1,5 @@
-import {Link} from "@heroui/react";
 import {ReactNode} from "react";
+import {Link} from "@heroui/react";
 import bothoUniversityTranscript from "@/assets/pdf/liteboho-moalosi-botho-university-transcript.pdf";
 import cybersecurityCertificate from "@/assets/pdf/liteboho-sanren-cyberserurity-cerificate-finals.pdf";
 
@@ -18,9 +18,12 @@ export const getEducation = (): Education[] => {
             name: "Botho University Lesotho",
             description: "B.sc(Hons) in Computing",
             body: <p className="font-light text-sm">
-                I am currently enrolled in Botho University Maseru Lesotho doing B.sc (Hons) in Computing concentrating
-                in Software Engineering, in my last six month of my studies. And all modules i did are in this
+                I have completed my Bachelor of Science (Honours) in Computing with a specialization in Software
+                Engineering at Botho University in Maseru, Lesotho, as of December 2024. Throughout my program, I
+                successfully completed all the required modules, which are detailed in my
                 <Link className="ml-1" href={bothoUniversityTranscript} download="liteboho-moalosi-botho-university-transcript.pdf">transcript</Link>.
+                This degree has equipped me with a comprehensive understanding of computing principles and methodologies, emphasizing
+                problem-solving, software development, and system design—essential skills for a career in software engineering.
             </p>
         },
         {
@@ -28,9 +31,11 @@ export const getEducation = (): Education[] => {
             name: "SANReN Cyber Security Competition",
             description: "Participation In Finals 2022 Certificate",
             body: <p className="font-light text-sm">
-                I participated in SANReN CSC Cyber Security Challenge final in 2022 that was in Pretoria South Africa,
-                under Cyber Codex - Botho University Lesotho team. And We appeared in 4 position and obtained
-                <Link className="ml-1" href={cybersecurityCertificate} download="moalosi-liteboho-sanren-cybersecurity-final-2022-certificate.pdf">certificate</Link>.
+                I had the privilege of participating in the SANReN Cyber Security Challenge finals in 2022, held in
+                Pretoria, South Africa, as part of the Cyber Codex team from Botho University in Lesotho. Our team
+                achieved an impressive fourth-place finish, earning a prestigious
+                <Link className="mx-1" href={cybersecurityCertificate} download="moalosi-liteboho-sanren-cybersecurity-final-2022-certificate.pdf">certificate</Link>
+                that marked our outstanding performance in this esteemed competition.
             </p>
         },
         {

@@ -35,7 +35,10 @@ export default function AboutMePage() {
             <section className="w-full h-fit flex py-6 flex-col gap-y-5 justify-center md:flex-row">
                 <div className="px-2 w-full flex flex-col gap-y-4">
                     <h1 className="text-center text-2xl font-light">Education</h1>
-                    <Accordion variant="splitted">
+                    <Accordion
+                        variant="splitted"
+                        defaultExpandedKeys={["0"]}
+                    >
                         {getEducation().map((item, index) => (
                             <AccordionItem
                                 isCompact
