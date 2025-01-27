@@ -8,7 +8,7 @@ export default function ProjectPage() {
     const {loading, upComing, completed, inProcess} = useProjects();
 
     return (
-        <section className="w-full h-screen p-2">
+        <section className="w-full p-2">
             <div className="px-2 pt-2">
                 <Tabs
                     aria-label="projects-categories-tabs"
