@@ -35,9 +35,10 @@ export default function HomePage() {
                                 <FlipWords words={words} className="text-primary"/>
                             </h3>
                             <p className="text-center">
-                                With a <strong>heart</strong> for innovation and helping others. I thrive on building
-                                efficient systems and processes that make a difference. Connect with me on
-                                <strong>LinkedIn</strong> and <strong>Twitter</strong> for insights and collaboration.
+                                With a <strong className="text-red-600">heart ❤️</strong> for innovation and helping
+                                others. I thrive on building efficient systems and processes that make a difference.
+                                Connect with me on <strong className="text-primary">LinkedIn</strong>
+                                and <strong>Twitter</strong> for insights and collaboration.
                             </p>
                         </div>
                         <div className="flex flex-col gap-x-3 items-center mt-4 md:flex-row">
