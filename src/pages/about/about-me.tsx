@@ -6,17 +6,29 @@ import {getExperience} from "@/pages/about/get-experience.tsx";
 export default function AboutMePage() {
     return (
         <>
-            <section className="px-5 py-6 flex justify-center">
+            <section className="px-5 py-6 flex justify-center items-center w-full lg:h-screen">
                 <div className="w-full md:w-4/5 lg:w-3/5">
-                    <h1 className="text-center text-2xl font-light mt-8">Who am Moalosi Liteboho?</h1>
-                    <p className="text-center font-light mt-6">
-                        In 2020 I was enrolled in Botho University Maseru Lesotho in a program named Bachelor of Science
-                        (Honours) in Computing which was 4.5 years program and I did not know anything about computing
-                        as I thought I wanted to be Doctor as I grown told that that looks nice on me until I chose to be
-                        Doctor of Computers. Later I chose to specialize in Software Engineering and now in my last six
-                        month of completing my degree. During my learning, I felt in love with Software Engineering
-                        especially Web Design and Development, and Api Development. And I also become passionate with
-                        DevOps Engineering and Cybersecurity and more.
+                    <h1 className="text-center text-2xl font-light lg:-mt-[3.5em]">Getting to Know Moalosi Liteboho</h1>
+                    <p className="text-center font-light mt-6 flex flex-col gap-y-3">
+                        <p>
+                            As a passionate and driven individual, I embarked on a transformative journey at Botho
+                            University in Maseru, Lesotho, where I pursued a Bachelor of Science (Honours) in Computing.
+                            Initially drawn to a career in medicine, I discovered a new passion for computing that
+                            reshaped my path. Software Engineering became my true calling, igniting a fire within me to
+                            craft innovative solutions and build impactful projects.
+                        </p>
+                        <p>
+                            Beyond the realms of Web Design and Development, API Development, DevOps Engineering, and
+                            Cybersecurity, I am deeply passionate about the art of Software Engineering itself. I love
+                            building systems that solve real-world problems, turning ideas into reality, and pushing the
+                            boundaries of what technology can achieve.
+                        </p>
+                        <p>
+                            I successfully completed my degree in December 2024 and am now eagerly awaiting my
+                            graduation ceremony. This milestone marks the culmination of my academic journey, and I am
+                            excited to apply my skills and knowledge to drive innovation, foster growth, and make a
+                            lasting impact in the tech world.
+                        </p>
                     </p>
                 </div>
             </section>

@@ -15,8 +15,8 @@ export default function HomePage() {
     return (
         <>
             <main className="h-screen w-full flex justify-center md:h-fit lg:h-screen items-center md:px-5">
-                <div className="h-fit w-full md:mt-10 lg:-mt-10 flex flex-col items-center md:justify-center gap-y-10 md:flex-row-reverse md:gap-x-2 md:items-start">
-                    <div className="w-[12em] h-[12em] md:w-[19em] md:h-[15em] lg:w-[16em] lg:h-[16em]">
+                <div className="h-fit w-full md:mt-10 lg:-mt-10 flex flex-col items-center md:justify-center gap-y-9 md:flex-row-reverse md:gap-x-2 md:items-start">
+                    <div className="w-[12em] h-[12em] md:w-[19em] md:h-[15em] lg:w-[16em] lg:h-[16em] -mt-[1.2em]">
                         <Image
                             removeWrapper
                             loading="lazy"
@@ -26,7 +26,7 @@ export default function HomePage() {
                             radius="full"
                         />
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center gap-y-3 md:w-4/5 lg:w-1/2">
                         <div className="w-[90%] md:w-[80%]">
                             <h3 className="text-xl text-center">Hello, It's me</h3>
                             <h2 className="text-2xl text-center">Liteboho James Moalosi</h2>
@@ -35,11 +35,12 @@ export default function HomePage() {
                                 <FlipWords words={words} className="text-primary"/>
                             </h3>
                             <p className="text-center">
-                                I love building things and assisting people with my heart. Very active on LinkedIn and
-                                Twitter.
+                                With a <strong>heart</strong> for innovation and helping others. I thrive on building
+                                efficient systems and processes that make a difference. Connect with me on
+                                <strong>LinkedIn</strong> and <strong>Twitter</strong> for insights and collaboration.
                             </p>
                         </div>
-                        <div className="flex flex-col gap-x-3 items-center mt-5 md:flex-row">
+                        <div className="flex flex-col gap-x-3 items-center mt-4 md:flex-row">
                             <Button
                                 as={Link}
                                 href={myCv}
