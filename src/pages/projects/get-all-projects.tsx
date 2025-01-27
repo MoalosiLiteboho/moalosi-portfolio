@@ -1,6 +1,6 @@
 import {Project} from "@/pages/projects/project-card.tsx";
 import {Chip} from "@heroui/react";
-import {IoLogoDocker, IoLogoReact} from "react-icons/io5";
+import {IoLogoDocker, IoLogoGithub, IoLogoReact} from "react-icons/io5";
 import {BiLogoPostgresql, BiLogoTailwindCss, BiLogoTypescript} from "react-icons/bi";
 import {DiNodejsSmall} from "react-icons/di";
 import {TbBrandFramerMotion, TbBucket} from "react-icons/tb";
@@ -540,6 +540,26 @@ export const getFavoriteProjects = (): Project[] => {
                         endContent={<GrJava className="text-blue-600" />}
                     >
                         Java
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-blue-400 to-cyan-400 border-cyan-400"
+                        endContent={<SiJsonwebtokens className="text-cyan-400" />}
+                    >
+                        Json Web Token
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        className="text-[#0064a5]"
+                        endContent={<BiLogoPostgresql />}
+                    >
+                        Postgres
+                    </Chip>
+                    <Chip
+                        variant="light"
+                        endContent={<IoLogoGithub />}
+                    >
+                        GitHub
                     </Chip>
                     <Chip
                         variant="light"

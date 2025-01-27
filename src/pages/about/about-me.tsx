@@ -11,8 +11,9 @@ export default function AboutMePage() {
                     <h1 className="text-center text-2xl font-light lg:-mt-[3.5em]">Getting to Know Moalosi Liteboho</h1>
                     <p className="text-center font-light mt-6 flex flex-col gap-y-3">
                         <p>
-                            As a passionate and driven individual, I embarked on a transformative journey at Botho
-                            University in Maseru, Lesotho, where I pursued a Bachelor of Science (Honours) in Computing.
+                            As a passionate and driven individual, I embarked on a transformative journey at <span className="text-primary">Botho
+                            University in Maseru, Lesotho</span>, where I pursued a <span className="text-primary">Bachelor
+                            of Science (Honours) in Computing Concentrating in Software Engineering</span>.
                             Initially drawn to a career in medicine, I discovered a new passion for computing that
                             reshaped my path. Software Engineering became my true calling, igniting a fire within me to
                             craft innovative solutions and build impactful projects.
