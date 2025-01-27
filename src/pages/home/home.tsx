@@ -74,8 +74,9 @@ export default function HomePage() {
             <section className="my-5 px-5 flex flex-col justify-center items-center">
                 <h3 className="text-2xl text-center font-light">Check out my latest work</h3>
                 <p className="w-full text-center md:w-3/4 lg:w-3/5">
-                    I've worked on a variety of projects, from simple websites to complex web applications, backend apis
-                    , desktop apps and more. Here are a few of my favorites.
+                    Throughout my career, I've had the opportunity to work on a diverse range of projects, spanning
+                    simple websites, complex web applications, backend APIs, desktop applications, and more. Below,
+                    I've highlighted a few of my most notable and favorite projects.
                 </p>
                 <div className="w-full mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-5 gap-x-4">
                     {getFavoriteProjects().map((project, index) => (
