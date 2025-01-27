@@ -1,5 +1,5 @@
 import {ComponentProps, ComponentPropsWithoutRef, ElementRef, forwardRef, HTMLAttributes} from "react";
-import {cn} from "@nextui-org/react";
+import {cn} from "@heroui/react";
 import { Drawer as DrawerPrimitive } from "vaul"
 
 const Drawer = ({shouldScaleBackground = true, ...props}: ComponentProps<typeof DrawerPrimitive.Root>) => (

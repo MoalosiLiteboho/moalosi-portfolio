@@ -8,7 +8,7 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     NavbarMenuToggle
-} from "@nextui-org/react";
+} from "@heroui/react";
 import {useLocation} from "react-router-dom";
 import {NavigationLinks} from "@/components/navigation/navigation-links.tsx";
 import ThemeSwitch from "@/components/theme/theme-switch.tsx";

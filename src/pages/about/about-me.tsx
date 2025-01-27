@@ -1,4 +1,4 @@
-import {Accordion, AccordionItem, Avatar, Button, Card, CardBody, Chip, cn, Link} from "@nextui-org/react";
+import {Accordion, AccordionItem, Avatar, Button, Card, CardBody, Chip, cn, Link} from "@heroui/react";
 import {getEducation} from "@/pages/about/get-education.tsx";
 import {getMySkills} from "@/pages/about/get-skills.tsx";
 import {getExperience} from "@/pages/about/get-experience.tsx";

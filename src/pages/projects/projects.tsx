@@ -1,4 +1,4 @@
-import {Tab, Tabs} from "@nextui-org/react";
+import {Tab, Tabs} from "@heroui/react";
 import {useSearchParams} from "react-router-dom";
 import ProjectLayoutPage from "@/pages/projects/project-layout.tsx";
 import {useProjects} from "@/pages/projects/use-projects.ts";

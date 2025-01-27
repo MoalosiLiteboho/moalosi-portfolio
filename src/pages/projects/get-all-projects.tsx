@@ -1,5 +1,5 @@
 import {Project} from "@/pages/projects/project-card.tsx";
-import {Chip} from "@nextui-org/react";
+import {Chip} from "@heroui/react";
 import {IoLogoDocker, IoLogoReact} from "react-icons/io5";
 import {BiLogoPostgresql, BiLogoTailwindCss, BiLogoTypescript} from "react-icons/bi";
 import {DiNodejsSmall} from "react-icons/di";

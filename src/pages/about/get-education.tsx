@@ -1,4 +1,4 @@
-import {Link} from "@nextui-org/react";
+import {Link} from "@heroui/react";
 import {ReactNode} from "react";
 import bothoUniversityTranscript from "@/assets/pdf/liteboho-moalosi-botho-university-transcript.pdf";
 import cybersecurityCertificate from "@/assets/pdf/liteboho-sanren-cyberserurity-cerificate-finals.pdf";

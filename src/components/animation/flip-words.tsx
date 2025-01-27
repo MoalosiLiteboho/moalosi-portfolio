@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
+import {cn} from "@heroui/react";
 import {AnimatePresence, motion} from "framer-motion";
-import {cn} from "@nextui-org/react";
 
 export interface FlipWordsProps {
     words: string[];

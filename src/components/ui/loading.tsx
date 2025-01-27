@@ -1,4 +1,4 @@
-import {cn, Spinner} from "@nextui-org/react";
+import {cn, Spinner} from "@heroui/react";
 
 export type LoadingProps = {
     className?: string;

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {SwitchProps, useSwitch, VisuallyHidden} from "@nextui-org/react";
+import {SwitchProps, useSwitch, VisuallyHidden} from "@heroui/react";
 import {useTheme} from "next-themes";
 import clsx from "clsx";
 import {IoSunnyOutline} from "react-icons/io5";

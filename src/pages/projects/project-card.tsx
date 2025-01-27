@@ -11,7 +11,7 @@ import {
     ModalContent,
     ModalHeader,
     useDisclosure
-} from "@nextui-org/react";
+} from "@heroui/react";
 import {PiGlobeThin, PiUsers} from "react-icons/pi";
 import {IoLogoGithub} from "react-icons/io5";
 import {CgUnavailable} from "react-icons/cg";

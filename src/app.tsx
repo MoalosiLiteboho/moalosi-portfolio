@@ -1,5 +1,5 @@
 import {Outlet, Route, Routes, useNavigate} from "react-router-dom";
-import {NextUIProvider} from "@nextui-org/react";
+import {HeroUIProvider} from "@heroui/react";
 import {ThemeProvider as NextThemesProvider} from "next-themes";
 import NavigationBar from "@/components/navigation/navigation-bar.tsx";
 import Footer from "@/components/ui/footer.tsx";
@@ -22,7 +22,7 @@ export default function App() {
     }
 
     return (
-        <NextUIProvider navigate={navigate}>
+        <HeroUIProvider navigate={navigate}>
             <NextThemesProvider attribute="class" defaultTheme="light">
                 <Routes>
                     <Route path="/" element={<RootLayout />}>
@@ -33,6 +33,6 @@ export default function App() {
                     </Route>
                 </Routes>
             </NextThemesProvider>
-        </NextUIProvider>
+        </HeroUIProvider>
     );
 }

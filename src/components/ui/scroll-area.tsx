@@ -1,5 +1,5 @@
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react";
-import {cn} from "@nextui-org/react";
+import {cn} from "@heroui/react";
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 
 const ScrollArea = forwardRef<

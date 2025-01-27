@@ -1,4 +1,4 @@
-import {Button, Card, CardBody, CardHeader, cn, Image, Link, User} from "@nextui-org/react";
+import {Button, Card, CardBody, CardHeader, cn, Image, Link, User} from "@heroui/react";
 import {IoMdArrowForward} from "react-icons/io";
 import {GoVerified} from "react-icons/go";
 import {FlipWords} from "@/components/animation/flip-words.tsx";

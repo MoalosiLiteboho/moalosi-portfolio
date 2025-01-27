@@ -1,4 +1,4 @@
-import {Button, cn, Divider, Link} from "@nextui-org/react";
+import {Button, cn, Divider, Link} from "@heroui/react";
 import Logo from "@/components/ui/logo.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 

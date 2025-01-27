@@ -1,6 +1,6 @@
 import {useCallback, useMemo, useState} from "react";
 import {useSearchParams} from "react-router-dom";
-import {Input, Pagination} from "@nextui-org/react";
+import {Input, Pagination} from "@heroui/react";
 import {FaMagnifyingGlass} from "react-icons/fa6";
 import Loading from "@/components/ui/loading.tsx";
 import ProjectCard, {Project} from "@/pages/projects/project-card.tsx";
