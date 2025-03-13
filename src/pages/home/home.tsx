@@ -4,7 +4,6 @@ import {GoVerified} from "react-icons/go";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import myProfileImage from "@/assets/images/me2.jpeg"
-import myCv from "@/assets/pdf/Moalosi CV.pdf"
 import ProjectCard from "@/pages/projects/project-card.tsx";
 import {getFavoriteProjects} from "@/pages/projects/get-all-projects.tsx";
 import {reviews} from "@/pages/home/reviews.tsx";
@@ -37,14 +36,14 @@ export default function HomePage() {
                             <p className="text-center">
                                 With a <strong className="text-red-600">heart ❤️</strong> for innovation and helping
                                 others. I thrive on building efficient systems and processes that make a difference.
-                                Connect with me on <strong className="text-primary">LinkedIn</strong>
+                                Connect with me on <strong className="text-primary">LinkedIn </strong>
                                 and <strong>Twitter</strong> for insights and collaboration.
                             </p>
                         </div>
                         <div className="flex flex-col gap-x-3 items-center mt-4 md:flex-row">
                             <Button
                                 as={Link}
-                                href={myCv}
+                                href="/pdf/moalosi-liteboho-cv.pdf"
                                 color="primary"
                                 variant="shadow"
                                 className="h-8"
