@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Project} from "@/pages/projects/project-card.tsx";
+import {Project} from "@/components/ui/project-card.tsx";
 import {getAllProjects} from "@/pages/projects/get-all-projects.tsx";
 
 export const useProjects = () => {

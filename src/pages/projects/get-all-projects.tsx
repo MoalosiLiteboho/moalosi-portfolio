@@ -1,4 +1,4 @@
-import {Project} from "@/pages/projects/project-card.tsx";
+import {Project} from "@/components/ui/project-card.tsx";
 import {Chip} from "@heroui/react";
 import {IoLogoDocker, IoLogoGithub, IoLogoReact} from "react-icons/io5";
 import {BiLogoPostgresql, BiLogoTailwindCss, BiLogoTypescript} from "react-icons/bi";

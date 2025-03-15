@@ -2,12 +2,12 @@ import {ReactNode} from "react";
 import {
     Button,
     Card,
-    CardFooter,
+    CardFooter, CardProps,
     Chip,
     Drawer,
     DrawerContent,
     DrawerHeader,
-    Image,
+    Image, ImageProps,
     Link,
     Modal,
     ModalContent,
@@ -32,10 +32,12 @@ export type Project = {
 }
 
 export type ProjectCardProps = Project & {
+    cardProps?: CardProps;
+    imageProps?: ImageProps;
     className?: string;
 }
 
-export default function ProjectCard({name, image, contributors, githubUrl, webUrl, icon, body}: ProjectCardProps) {
+export default function ProjectCard({name, image, contributors, githubUrl, webUrl, icon, body, cardProps, imageProps}: ProjectCardProps) {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const screenType = useScreenType();
 
@@ -43,13 +45,15 @@ export default function ProjectCard({name, image, contributors, githubUrl, webUr
         <>
             <Card
                 isFooterBlurred
-                className="w-full h-[16em]"
+                className="w-full h-[18em]"
+                {...cardProps}
             >
                 <Image
                     removeWrapper
                     alt={`${name}-image`}
                     className="z-0 w-full h-full scale-100 object-cover"
                     src={image}
+                    {...imageProps}
                 />
                 <CardFooter className="absolute bg-white/40 dark:bg-black/50 bottom-0 border-t-1 border-zinc-100/50 z-10">
                     <div className="w-full flex flex-col">

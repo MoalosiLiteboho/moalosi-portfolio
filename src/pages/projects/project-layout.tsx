@@ -3,7 +3,7 @@ import {useSearchParams} from "react-router-dom";
 import {Input, Pagination} from "@heroui/react";
 import {FaMagnifyingGlass} from "react-icons/fa6";
 import Loading from "@/components/ui/loading.tsx";
-import ProjectCard, {Project} from "@/pages/projects/project-card.tsx";
+import ProjectCard, {Project} from "@/components/ui/project-card.tsx";
 import ItemsNotFound from "@/components/ui/items-not-found.tsx";
 
 export type ProjectLayoutProps = {
