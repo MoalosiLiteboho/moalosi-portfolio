@@ -4,15 +4,11 @@ import {getAllProjects} from "@/pages/projects/get-all-projects.tsx";
 
 export const useProjects = () => {
     const [loading, setLoading] = useState<boolean>(false);
-    const [inProcess, setInProcess] = useState<Project[]>([]);
-    const [upComing, setUpComing] = useState<Project[]>([]);
-    const [completed, setCompleted] = useState<Project[]>([]);
+    const [projects, setProjects] = useState<Project[]>([])
 
     const fetchAllProjects = () => {
         setLoading(true);
-        setUpComing(getAllProjects().filter((project: Project) => project.status === "upcoming"));
-        setCompleted(getAllProjects().filter((project: Project) => project.status === "completed"));
-        setInProcess(getAllProjects().filter((project: Project) => project.status === "in-process"));
+        setProjects(getAllProjects());
         setLoading(false);
     }
 
@@ -22,8 +18,6 @@ export const useProjects = () => {
 
     return {
         loading,
-        upComing,
-        completed,
-        inProcess
+        projects
     };
 }

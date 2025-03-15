@@ -2,7 +2,7 @@ import {ReactNode} from "react";
 import {
     Button,
     Card,
-    CardFooter, CardProps,
+    CardFooter, CardHeader, CardProps,
     Chip,
     Drawer,
     DrawerContent,
@@ -29,15 +29,17 @@ export type Project = {
     webUrl?: string;
     githubUrl?: string;
     body?: ReactNode;
+    isBest?: boolean;
 }
 
 export type ProjectCardProps = Project & {
+    className?: string;
+    displayStatus?: boolean;
     cardProps?: CardProps;
     imageProps?: ImageProps;
-    className?: string;
 }
 
-export default function ProjectCard({name, image, contributors, githubUrl, webUrl, icon, body, cardProps, imageProps}: ProjectCardProps) {
+export default function ProjectCard({displayStatus, name, status, image, contributors, githubUrl, webUrl, icon, body, cardProps, imageProps}: ProjectCardProps) {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const screenType = useScreenType();
 
@@ -48,6 +50,21 @@ export default function ProjectCard({name, image, contributors, githubUrl, webUr
                 className="w-full h-[18em]"
                 {...cardProps}
             >
+                {displayStatus && (
+                    <CardHeader className="absolute justify-end">
+                        <Chip
+                            size="sm"
+                            variant="shadow"
+                            color={status === "completed" ? "success"
+                                : status === "upcoming" ? "warning"
+                                    : "secondary"
+                            }
+                            className="text-white capitalize"
+                        >
+                            {status}
+                        </Chip>
+                    </CardHeader>
+                )}
                 <Image
                     removeWrapper
                     alt={`${name}-image`}

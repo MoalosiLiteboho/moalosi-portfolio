@@ -4,7 +4,7 @@ import {GoVerified} from "react-icons/go";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import ProjectCard from "@/components/ui/project-card.tsx";
-import {getFavoriteProjects} from "@/pages/projects/get-all-projects.tsx";
+import {getAllProjects} from "@/pages/projects/get-all-projects.tsx";
 import useReviews from "@/pages/reviews/use-reviews.ts";
 
 const words = ["Software Engineer.", "FullStack Developer.", "Java Developer.", "DevOps Engineer.", "CTF Player."];
@@ -76,7 +76,7 @@ export default function HomePage() {
                         </p>
                     </div>
                     <div className="w-full mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
-                        {getFavoriteProjects().map((project, index) => (
+                        {getAllProjects().filter(item  => item.isBest).map((project, index) => (
                             <ProjectCard
                                 key={index}
                                 {...project}
