@@ -112,14 +112,6 @@ export default function AboutMePage() {
                     ))}
                 </div>
             </section>
-            <section className="flex flex-col items-center p-4">
-                <h1 className="text-center text-2xl font-light">Get in Touch</h1>
-                <p className="text-center w-full md:w-3/4 lg:w-3/5">
-                    Want to chat? Just shut me a dm on <Link isExternal href="https://www.linkedin.com/in/liteboho-moalosi-64151626a/">
-                    LinkedIn</Link>, <Link isExternal href="https://twitter.com/GenieMoalosi">Twitter</Link> or <Link isExternal href="mailto:litebohojamesmoalosi@gmail.com">
-                    Email</Link> me with a direct message or question and I will respond whenever i can.
-                </p>
-            </section>
         </>
     );
 }

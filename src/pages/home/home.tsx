@@ -153,6 +153,19 @@ export default function HomePage() {
                     }
                 </div>
             </section>
+            <section className="py-8">
+                <div className="mx-auto max-w-7xl space-y-4 px-6 md:space-y-8">
+                    <div className="relative z-10 mx-auto max-w-3xl space-y-6 text-center md:space-y-6">
+                        <h2 className="text-4xl font-light lg:text-5xl">Get in Touch</h2>
+                        <p className="text-lg lg:text-xl text-gray-600">
+                            Want to chat? Just shut me a dm on <Link isExternal className="text-lg lg:text-xl" href="https://www.linkedin.com/in/liteboho-moalosi-64151626a/">
+                            LinkedIn</Link>, <Link isExternal className="text-lg lg:text-xl" href="https://twitter.com/GenieMoalosi">
+                            Twitter</Link> or <Link isExternal className="text-lg lg:text-xl" href="mailto:litebohojamesmoalosi@gmail.com">Email</Link> me
+                            with a direct message or question and I will respond whenever i can.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </>
     );
 }
