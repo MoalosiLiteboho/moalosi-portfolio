@@ -12,7 +12,7 @@ export const getExperience = (): Experience[] => {
             tittle: "ISOC Lesotho",
             description: "Web Developer & Designer, DevOps Engineer",
             url: "https://isoc.org.ls/",
-            duration: "June, 2024"
+            duration: "June, 2024 - Now"
         },
         {
             tittle: "Tsepo Ea Rona Finance",

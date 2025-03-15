@@ -18,12 +18,10 @@ export const getEducation = (): Education[] => {
             name: "Botho University Lesotho",
             description: "B.sc(Hons) in Computing",
             body: <p className="font-light text-sm">
-                I have completed my Bachelor of Science (Honours) in Computing with a specialization in Software
-                Engineering at Botho University in Maseru, Lesotho, as of December 2024. Throughout my program, I
-                successfully completed all the required modules, which are detailed in my
-                <Link className="ml-1" href={bothoUniversityTranscript} download="liteboho-moalosi-botho-university-transcript.pdf">transcript</Link>.
-                This degree has equipped me with a comprehensive understanding of computing principles and methodologies, emphasizing
-                problem-solving, software development, and system design—essential skills for a career in software engineering.
+                I hold a Bachelor of Science (Honours) in Computing with a specialization in Software Engineering from
+                Botho University, Maseru, Lesotho, as of December 2024. This degree has provided me with a solid
+                foundation in computing principles, emphasizing problem-solving, software development, and system
+                design—key skills for a successful career in software engineering. <Link className="ml-1 capitalize" href={bothoUniversityTranscript} download="liteboho-moalosi-botho-university-transcript.pdf">transcript</Link>.
             </p>
         },
         {
