@@ -1,11 +1,11 @@
-import {Button, cn, Image, Link, Spinner} from "@heroui/react";
+import {Button, Card, CardBody, CardFooter, cn, Image, Link, Spinner, User} from "@heroui/react";
 import {IoMdArrowForward} from "react-icons/io";
+import {GoVerified} from "react-icons/go";
 import {FlipWords} from "@/components/animation/flip-words.tsx";
 import {SocialMediaLinks} from "@/components/navigation/navigation-links.tsx";
 import ProjectCard from "@/components/ui/project-card.tsx";
 import {getFavoriteProjects} from "@/pages/projects/get-all-projects.tsx";
 import useReviews from "@/pages/reviews/use-reviews.ts";
-import ReviewCard from "@/pages/reviews/review-card.tsx";
 
 const words = ["Software Engineer.", "FullStack Developer.", "Java Developer.", "DevOps Engineer.", "CTF Player."];
 
@@ -107,10 +107,47 @@ export default function HomePage() {
                         : error ? <span className="text-xl text-gray-600 text-pretty">Oops! there's something went wrong when fetching reviews....</span>
                             : <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {reviews.map((review, index) => (
-                                    <ReviewCard
+                                    <Card
                                         key={`best-review-card-of-${review.name}-${index}`}
-                                        review={review}
-                                    />
+                                        className={cn(
+                                            index === 0 && "md:col-span-2 lg:row-span-2"
+                                        )}
+                                    >
+                                        <CardBody className="-mb-2">
+                                            <blockquote
+                                                className={cn(
+                                                    "text-sm text-gray-500",
+                                                    index === 0 && "lg:text-4xl lg:leading-[1em]",
+                                                    index === 2 && "md:text-2xl lg:text-sm"
+                                                )}
+                                            >
+                                                &quot;
+                                                {review.body}
+                                                &quot;
+                                            </blockquote>
+                                        </CardBody>
+                                        <CardFooter>
+                                            <User
+                                                name={review.name}
+                                                description={(
+                                                    <Link
+                                                        href={review.profileLink}
+                                                        className="flex items-center gap-x-1 text-tiny hover:underline"
+                                                    >
+                                                        <GoVerified className="text-lg" />
+                                                        {typeof review.status === 'string' ?
+                                                            <span>{review.status}</span>
+                                                            : <span>{review.status.join(", ")}</span>
+                                                        }
+                                                    </Link>
+                                                )}
+                                                avatarProps={{
+                                                    src: `${review.img}`,
+                                                    isBordered: true
+                                                }}
+                                            />
+                                        </CardFooter>
+                                    </Card>
                                 ))}
                             </div>
                     }
